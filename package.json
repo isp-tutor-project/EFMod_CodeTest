@@ -1,0 +1,13 @@
+{
+  "name": "mod_template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "systemjs": "^0.21.2"
+  }
+}

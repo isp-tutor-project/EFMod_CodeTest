@@ -1,0 +1,136 @@
+
+{
+
+	"SScene1":
+	{	
+		"COMMENT":"TED Introduction sequence...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Welcome...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"INTRO1",
+					"edges":
+							[
+								{"constraint":"","edge":"INTRO1" }
+							]
+					},
+															
+			"INTRO1":{"COMMENT":"Welcome...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"INTRO1",
+					"edges":
+							[
+								{"constraint":"","edge":"NEXTSCENE" }
+							]
+					},					
+										
+			"NEXTSCENE":{"COMMENT":"When module is complete - move to next scene in the scenegraph",
+					 "type":"node",
+					"subtype":"action", 
+					 "name":"NEXTSCENE",
+					 "edges":
+							[
+							]
+					}															
+		},		
+			
+		"CModules":
+		{		
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+		
+			"INTRO1":
+			{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"trackname":"tedIntro1", "cues":"cueSet1", "events":"eventSet1", "features":""}
+				]
+			}			
+		}
+	},
+	
+	
+	"SScene2":
+	{	
+		"COMMENT":"Today we're going to...",
+		"type":"animation",
+		"version":"0.1.0",
+	
+		"CNodes":
+		{	
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CNodes  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+						
+			"root":{"COMMENT":"Today we're going to learn how to design good ...",
+					"type":"node",
+					"subtype":"module", 
+					"name":"INTRO_A.0",
+					 "preenter":"{ setButtonBehavior('incrAnimation'); fComplete=false; updateNav(); }",
+					 "preexit" :"",
+					 "edges":
+							[
+								{"constraint":"","edge":"INTRO_A.1" }
+							]
+					},
+										
+			"NEXTSCENE":{"COMMENT":"When module is complete - move to next scene in the scenegraph",
+					 "type":"node",
+					"subtype":"action", 
+					 "name":"NEXTSCENE",
+					 "preenter":"",
+					 "preexit" :"{setButtonBehavior('incrScene');}",					 
+					 "edges":
+							[
+							]
+					}					
+					
+					
+		},		
+			
+		"CModules":
+		{		
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+			"COMMENT":"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  CModules  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
+		
+			"INTRO_A.0":
+			{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"classname":"CWOZLessonIntroAudio1A.0", "features":""}
+				]
+			},
+			
+			"INTRO_A.1":
+			{
+				"COMMENT":"",
+				"type":"module",
+				"reuse":true,
+				"actiontracks":		
+				[
+					{"classname":"CWOZLessonIntroAudio1A.1", "features":""}
+				]
+			}
+		}		
+	}
+
+}
+
+
+
+
+
+

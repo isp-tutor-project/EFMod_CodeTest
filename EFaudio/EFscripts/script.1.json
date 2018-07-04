@@ -1,0 +1,62 @@
+{
+    "scripts": {
+        "SScene1": {
+            "tedIntro1": {
+                "html": "<p>There   are,  <b>multiple</b> {{var1}} properties,  <span>which can be     {{var2}}     modified,</span>   using SSML.</p>",
+                "text": "",
+                "cueSet": "a.......................m.......................................................z",
+                "timedSet": [
+                    {
+                        "event1": "+150"
+                    },
+                    {
+                        "event2": "-100"
+                    }
+                ],
+                "templates": {
+                    "var1": {
+                        "values": {
+                            "valname1": "string1",
+                            "valname2": "possible string2",
+                            "valname3": "last possibility"
+                        },
+                        "notes": ""
+                    },
+                    "var2": {
+                        "values": {
+                            "valname1": "valueA",
+                            "valname2": "valueB",
+                            "valname3": "ValueC"
+                        },
+                        "notes": ""
+                    }
+                }
+            },
+            "tedIntro2": {
+                "html": "<p>There are many properties.</p>",
+                "text": "",
+                "cueSet": "",
+                "timedSet": [],
+                "templates": {}
+            }
+        },
+        "SScene2": {
+            "tedIntro1": {
+                "html": "<p>There are many {{var1}} properties.</p>",
+                "text": "",
+                "cueSet": "",
+                "timedSet": [],
+                "templates": {
+                    "var1": {
+                        "values": {
+                            "valname1": "string1",
+                            "valname2": "possible string2",
+                            "valname3": "last possibility"
+                        },
+                        "notes": ""
+                    }
+                }
+            }
+        }
+    }
+}

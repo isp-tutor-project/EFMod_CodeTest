@@ -1,0 +1,19 @@
+{
+  "name": "EFTut_Suppl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run compile && npm run copy",
+    "compile": "tsc",
+    "copy": "copyfiles -u 2 ../graphs/*.json* ../../EFTutors/Std_Login/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "typescript": "^2.8.3"
+  }
+}

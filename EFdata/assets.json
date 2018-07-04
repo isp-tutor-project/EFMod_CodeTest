@@ -1,0 +1,23 @@
+{
+
+	"SScene1":{
+		
+	},
+	"SScene2":{
+		
+	},
+	"SScene3":{
+		
+	},
+	"SScene4":{
+		
+	},
+
+
+	"library" : {
+
+		"common":{
+			"<name>":[{"source":"", "html":"", "features":""}]
+		}
+	}
+}

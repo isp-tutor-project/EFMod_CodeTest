@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="thermite_CEFButton__SignIn" itemID="5add15b5-000004f1" lastModified="1524438453">
+  <timeline>
+    <DOMTimeline name="thermite_CEFButton__SignIn">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance selected="true" libraryItemName="loginIcon.png">
+                  <matrix>
+                    <Matrix a="0.4609375" d="0.4609375" tx="-29.5" ty="-29.5"/>
+                  </matrix>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

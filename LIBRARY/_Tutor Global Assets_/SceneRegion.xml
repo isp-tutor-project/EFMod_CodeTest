@@ -1,0 +1,54 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_Tutor Global Assets_/SceneRegion" itemID="5ad4e5af-00000a3e" sourceFlashFilepath="../EFMod_NavTED/EFMod_NavTED.xfl" sourceLibraryItemHRef="Tutor Global Assets/SceneRegion" sourceLastModified="1523901913" lastModified="1523901913" lastUniqueIdentifier="1" sourceItemID="00000000-ffffffff">
+  <timeline>
+    <DOMTimeline name="SceneRegion">
+      <layers>
+        <DOMLayer name="region" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="812.95" objectHeight="673.95" x="83" y="77" lockFlag="true">
+                  <matrix>
+                    <Matrix a="2.26412963867188" d="1.50955200195313" tx="-148.25" ty="-75.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="489" y="413.7"/>
+                  </transformationPoint>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="background" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="1920" objectHeight="1200" x="-1" y="1" topLeftRadius="10" topRightRadius="10" bottomLeftRadius="-123" bottomRightRadius="-123">
+                  <matrix>
+                    <Matrix tx="1" ty="-1"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#CCCCCC"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" weight="2.5" pixelHinting="true">
+                      <fill>
+                        <SolidColor color="#000066"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

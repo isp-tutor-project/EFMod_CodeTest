@@ -1,0 +1,29 @@
+{
+
+        "language": {
+
+                "en": {
+                        "M0": {
+                                "voice": {
+                                        "input": {"ssml": "<content>"},
+                                        "voice": {"name":"en-US-Wavenet-D",
+                                                "languageCode": "en-US", 
+                                                "ssmlGender": "MALE"},
+                                        "audioConfig": {"audioEncoding": "MP3"}
+                                },
+                                "parms":{"rate":1, "pitch":0 }
+                        },
+
+                        "F0": {
+                                "voice": {
+                                        "input": {"ssml": "<content>"},
+                                        "voice": {"name":"en-US-Wavenet-F",
+                                                "languageCode": "en-US", 
+                                                "ssmlGender": "FEMALE"},
+                                        "audioConfig": {"audioEncoding": "MP3"}
+                                },
+                                "parms":{"rate":1, "pitch":0 }
+                        }
+                }
+        }
+}

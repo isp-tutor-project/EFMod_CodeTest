@@ -1,0 +1,15 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "compilerOptions": {
+		"module": "system",
+		"target": "es6",
+		"sourceMap": true,
+		"declaration": true,
+        "outFile": "../EFbuild/exts.js",        
+		"lib": [ "es2015", "dom" ],	
+        "noImplicitAny": true,
+        "removeComments":true
+    }
+}
