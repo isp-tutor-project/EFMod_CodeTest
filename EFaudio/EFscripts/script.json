@@ -41,7 +41,24 @@
 				"cueSet": ".......a.................",
 				"segments": [],
 				"timedSet": [],
-				"templates": {}
+				"templates": {
+					"var1": {
+						"values": {
+							"valname1": "string1",
+							"valname2": "possible string2",
+							"valname3": "last possibility"
+						},
+						"notes": ""
+					},
+					"var2": {
+						"values": {
+							"valname1": "valueA",
+							"valname2": "valueB",
+							"valname3": "ValueC"
+						},
+						"notes": ""
+					}
+				}
 			}
 		}
 	},
@@ -92,7 +109,7 @@
 			"en": {
 				"html": "<p>This is just plain text no templates.</p>",
 				"text": "This is just plain text no templates.",
-				"cueSet": "...a...............n...............",
+				"cueSet": "...a...............n......................z",
 				"segments": [],
 				"timedSet": [],
 				"templates": {}

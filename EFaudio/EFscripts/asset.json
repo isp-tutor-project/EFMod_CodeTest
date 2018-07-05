@@ -20,25 +20,7 @@
 					},
 					{
 						"templateVar": "var1",
-						"valname1": {
-							"id": "1a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"m": 0.625
-								}
-							]
-						},
-						"valname2": {
-							"id": "1b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"m": 0.625
-								}
-							]
-						},
-						"valname3": {
+						"var1": {
 							"id": "1c",
 							"SSML": "last possibility",
 							"cues": [
@@ -58,17 +40,7 @@
 					},
 					{
 						"templateVar": "var2",
-						"valname1": {
-							"id": "3a",
-							"SSML": "valueA",
-							"cues": []
-						},
-						"valname2": {
-							"id": "3b",
-							"SSML": "valueB",
-							"cues": []
-						},
-						"valname3": {
+						"var2": {
 							"id": "3c",
 							"SSML": "ValueC",
 							"cues": []
@@ -123,25 +95,7 @@
 				"segments": [
 					{
 						"templateVar": "var1",
-						"valname1": {
-							"id": "0a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"a": 0.875
-								}
-							]
-						},
-						"valname2": {
-							"id": "0b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"a": 0.875
-								}
-							]
-						},
-						"valname3": {
+						"var1": {
 							"id": "0c",
 							"SSML": "last possibility",
 							"cues": [
@@ -161,17 +115,7 @@
 					},
 					{
 						"templateVar": "var2",
-						"valname1": {
-							"id": "2a",
-							"SSML": "valueA",
-							"cues": []
-						},
-						"valname2": {
-							"id": "2b",
-							"SSML": "valueB",
-							"cues": []
-						},
-						"valname3": {
+						"var2": {
 							"id": "2c",
 							"SSML": "ValueC",
 							"cues": []
@@ -221,25 +165,7 @@
 					},
 					{
 						"templateVar": "var1",
-						"valname1": {
-							"id": "1a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"n": 0.625
-								}
-							]
-						},
-						"valname2": {
-							"id": "1b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"n": 0.625
-								}
-							]
-						},
-						"valname3": {
+						"var1": {
 							"id": "1c",
 							"SSML": "last possibility",
 							"cues": [
@@ -281,39 +207,12 @@
 				"segments": [
 					{
 						"templateVar": "var1",
-						"valname1": {
-							"id": "0a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"a": 0.375
-								},
-								{
-									"n": 1
-								}
-							]
-						},
-						"valname2": {
-							"id": "0b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"a": 0.375
-								},
-								{
-									"n": 1
-								}
-							]
-						},
-						"valname3": {
+						"var1": {
 							"id": "0c",
 							"SSML": "last possibility",
 							"cues": [
 								{
 									"a": 0.375
-								},
-								{
-									"n": 1
 								}
 							]
 						}
@@ -338,7 +237,7 @@
 			"en": {
 				"html": "<p>This is just plain text no templates.</p>",
 				"text": "This is just plain text no templates.",
-				"cueSet": "...a...............n......................z",
+				"cueSet": "...a...............n...............",
 				"segments": [
 					{
 						"templateVar": "__novar",
@@ -351,9 +250,6 @@
 								},
 								{
 									"n": 0.5135135135135135
-								},
-								{
-									"z": 1
 								}
 							]
 						}

@@ -33,9 +33,10 @@ const ZERO_SEGID    = 0;
 const TAG_SPEAKSTART = "<speak>";
 const TAG_SPEAKEND   = "</speak>";
 
-const voicesPath:string = "EFscripts/languagevoice.json";
-const scriptPath:string = "EFscripts/script.json";
-const assetPath:string  = "EFscripts/asset.json";
+const voicesPath:string   = "EFscripts/languagevoice.json";
+const originalPath:string = "EFscripts/original.json";
+const scriptPath:string   = "EFscripts/script.json";
+const assetPath:string    = "EFscripts/assets.json";
 
 let voices:any; 
 let input:any;
@@ -61,10 +62,11 @@ interface templValue {
 }
 
 
+
 interface segment {
 
-    templateName: string;
-    
+    templateVar: string;
+
     [key: string]: segmentVal|string;
 }
 interface segmentVal {
@@ -75,7 +77,7 @@ interface segmentVal {
 }
 interface cuePoint {
 
-    [key: string]: string;
+    [key: string]: number;
 }
 
 
@@ -151,8 +153,20 @@ function trimTemplateValues(templ:templVar) {
     }
 }
 
+function trimCuePoints(cueArray:Array<findArray>, inst:scriptInstance) {
 
-function postProcessScript(inst:scriptInstance) {
+    let length = inst.text.length;
+
+    // Ensure cue points aren't past the end of the utterance.
+    //
+    for(let cue of cueArray) {
+        if(cue.index > length)
+            cue.index = length;
+    }
+}
+
+
+function postProcessScript(inst:scriptInstance, segID:number) {
         
     wordArray  = inst.text.split(RX_WHITESPACE);
     templArray = enumerateItems(RX_TEMPLATES, inst.text);
@@ -160,19 +174,20 @@ function postProcessScript(inst:scriptInstance) {
     for(let item of templArray) {
         item[1] = item[0].replace(RX_TEMPLTAGS,"");
     }
-    cueArray = enumerateItems(RX_CUEPOINTS, inst.cueSet);
 
-    segmentScript(inst);
+    cueArray = enumerateItems(RX_CUEPOINTS, inst.cueSet);
+    trimCuePoints(cueArray, inst);
+
+    segmentScript(inst, segID++);
 }
 
-function segmentScript(inst:scriptInstance) {
+function segmentScript(inst:scriptInstance, segID:number) {
 
     let start:number = 0;
     let end:number   = inst.text.length;
-    let segID:number = ZERO_SEGID;
 
     if(templArray.length) {
-        start = 0;
+        start    = 0;
 
         // enumerate the templates to segment the text for TTS synthesis and playback
         // 
@@ -182,13 +197,13 @@ function segmentScript(inst:scriptInstance) {
             // 
             end = templ.index;            
             if(start < end)
-                addSegment(inst, start, end, segID++ );
+                addSegment(inst, null, start, end, segID++ );
 
             // then add the template itself
             start = templ.index;
             end   = templ.endIndex;
 
-            addSegment(inst, start, end, segID++ );
+            addSegment(inst, templ, start, end, segID++ );
 
             start = end;
         }
@@ -198,30 +213,97 @@ function segmentScript(inst:scriptInstance) {
     // 
     end = inst.text.length;            
     if(start < end)
-        addSegment(inst, start, end, segID++ );
+        addSegment(inst, null, start, end, segID++ );
 }
 
 
-function addSegment(inst:scriptInstance, start:number, end:number, segID:number) {
+function addSegment(inst:scriptInstance, templ:findArray, start:number, end:number, segID:number ) {
 
-    console.log(`Adding Segment: ${inst.text.substring(start, end)} - id:${segID}`);
+    if(templ) {
+
+        try {
+            let templVals:templValue = inst.templates[templ[1]].values;
+
+            inst.segments.push(composeSegment(templ[1],templVals, start, end, segID));
+        }
+        catch(error) {
+
+            console.log("Possible missing Template: " + error);
+        }
+    }
+    else {
+
+        let segStr    = segID.toString();
+        let scriptSeg = inst.text.substring(start, end);
+
+        inst.segments.push(composeSegment("__novar",{__novar:scriptSeg}, start, end, segID));
+    }
 }
 
 
-function charEncodeSegID(primeindex:number, subindex:number) : string {
+function composeSegment(templVar:string, templVals:templValue, start:number, end:number,  segID:number) : segment {
 
-    let result:string = primeindex >= 0? primeindex.toString():"";
+    let seg:segment     = {templateVar:templVar};
+    let subSegID:number = ZERO_SEGID;
+
+    for(let templValName in templVals) {
+
+        let text = templVals[templValName];
+
+        let cuePoints:Array<cuePoint> = composeCuePoints(text,start,end);
+
+        let segStr:string = segID.toString() + ((templValName !== "__novar")? charEncodeSegID(ASCII_a, subSegID++):"");
+
+        console.log(`Adding Segment: ${text} - id:${segStr}`);
+
+        seg[templValName] = {
+            id:segStr,
+            SSML:text,
+            cues:cuePoints
+        }
+    }
+
+    return seg;
+}
+
+
+function composeCuePoints(templVar:string, start:number, end:number ) : Array<cuePoint> {
+
+    let cues:Array<cuePoint> = [];
+    let length:number = end - start;
+
+    for(let cuePnt of cueArray) {
+        if(cuePnt.index >= start && cuePnt.index <= end) {
+
+            let segCue:cuePoint = {};
+
+            segCue[cuePnt[0]] = ((cuePnt.index - start)/length);
+
+            cues.push(segCue);
+        }
+    }
+
+    return cues;
+}
+
+
+
+function charEncodeSegID(charBase:number, subindex:number) : string {
+
+    let result:string = "";
 
     if(subindex >= 26)
-        result = charEncodeSegID(-1, subindex/26);
+        result = charEncodeSegID(ASCII_A, subindex/26);
 
-    result += String.fromCharCode(97 + primeindex);
+    result += String.fromCharCode(charBase + subindex % 26);
 
     return result;
 }
 
 
 function compileScript() {
+
+    let segID = ZERO_SEGID;
 
     voices = JSON.parse(filesystem.readFileSync(voicesPath)); 
     input  = JSON.parse(filesystem.readFileSync(scriptPath));
@@ -240,10 +322,10 @@ function compileScript() {
 
         for(let script in input[scene]) {
 
-            postProcessScript(input[scene][script].en);
+            postProcessScript(input[scene][script].en, segID);
         }        
     }    
-    // updateProcessedScripts(assetPath);
+     updateProcessedScripts(assetPath);
 
 
 }

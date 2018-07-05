@@ -8,7 +8,7 @@
                 "cueSet": "a.......................m.......................................................z",
                 "segments": [
                     {
-                        "templateName": "__novar",
+                        "templateVar": "__novar",
                         "__novar": {
                             "id": "0",
                             "SSML": "There are multiple ",
@@ -23,7 +23,7 @@
                         }
                     },
                     {
-                        "templateName": "var1",
+                        "templateVar": "var1",
                         "valname1": {
                             "id": "1a",
                             "SSML": "string1",
@@ -53,7 +53,7 @@
                         }
                     },
                     {
-                        "templateName": "__novar",
+                        "templateVar": "__novar",
                         "__novar": {
                             "id": "2",
                             "SSML": "properties, which can be ",
@@ -61,7 +61,7 @@
                         }
                     },
                     {
-                        "templateName": "var2",
+                        "templateVar": "var2",
                         "valname1": {
                             "id": "3a",
                             "SSML": "valueA",
@@ -79,7 +79,7 @@
                         }
                     },
                     {
-                        "templateName": "__novar",
+                        "templateVar": "__novar",
                         "__novar": {
                             "id": "4",
                             "SSML": "modified, using SSML",
