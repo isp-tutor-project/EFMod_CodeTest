@@ -16,7 +16,8 @@
 
 'use strict';
 
-const filesystem = require('fs');
+const fs   = require('fs');
+const path = require('path');
 
 const RX_SGMLTAGS   = /<[^>\r]*>/g;
 const RX_DUPWHITESP = /\s+/g;
@@ -26,6 +27,10 @@ const RX_TEMPLTRIM  = /\s*(\{\{[^\}]*\}\})\s*/g;
 const RX_TEMPLTAGS  = /\{\{|\}\}/g;
 const RX_CUEPOINTS  = /[^\.\"]/g;
 const RX_DUPPUNCT   = /\s+([,\.])+\s/g;
+const RX_MODULENAME = /EFMod_\w*/;
+
+const ASSETS_PATH   = "EFAudio/EFassets";
+
 const ASCII_a       = 97;
 const ASCII_A       = 65;
 const ZERO_SEGID    = 0;
@@ -33,10 +38,10 @@ const ZERO_SEGID    = 0;
 const TAG_SPEAKSTART = "<speak>";
 const TAG_SPEAKEND   = "</speak>";
 
-const voicesPath:string   = "EFscripts/languagevoice.json";
-const originalPath:string = "EFscripts/original.json";
-const scriptPath:string   = "EFscripts/script.json";
-const assetPath:string    = "EFscripts/assets.json";
+const voicesPath:string   = "EFAudio/EFscripts/languagevoice.json";
+const originalPath:string = "EFAudio/EFscripts/original.json";
+const scriptPath:string   = "EFAudio/EFscripts/script.json";
+const assetPath:string    = "EFAudio/EFscripts/assets.json";
 
 let voices:any; 
 let input:any;
@@ -46,7 +51,31 @@ let cueArray:Array<findArray>;
 let wordArray:Array<string>;
 let segmentArray:Array<segment>;
 
+let filesRequested:number = 0;
+let filesProcessed:number = 0;
 
+
+
+interface InputType {
+    ssml:string;
+    text:string;
+}
+
+interface VoiceType {
+    name:string;
+    languageCode:string;
+    ssmlGender:string;
+}
+
+interface AudioType {
+    audioEncoding:string;
+}
+
+interface requestType {
+    input:InputType;
+    voice:VoiceType;
+    audioConfig:AudioType;
+}
 
 interface template {
 
@@ -181,6 +210,7 @@ function postProcessScript(inst:scriptInstance, segID:number) {
     segmentScript(inst, segID++);
 }
 
+
 function segmentScript(inst:scriptInstance, segID:number) {
 
     let start:number = 0;
@@ -224,7 +254,7 @@ function addSegment(inst:scriptInstance, templ:findArray, start:number, end:numb
         try {
             let templVals:templValue = inst.templates[templ[1]].values;
 
-            inst.segments.push(composeSegment(templ[1],templVals, start, end, segID));
+            inst.segments.push(composeSegment(templ[1], templVals, start, end, segID));
         }
         catch(error) {
 
@@ -287,7 +317,6 @@ function composeCuePoints(templVar:string, start:number, end:number ) : Array<cu
 }
 
 
-
 function charEncodeSegID(charBase:number, subindex:number) : string {
 
     let result:string = "";
@@ -305,14 +334,22 @@ function compileScript() {
 
     let segID = ZERO_SEGID;
 
-    voices = JSON.parse(filesystem.readFileSync(voicesPath)); 
-    input  = JSON.parse(filesystem.readFileSync(scriptPath));
+    voices = JSON.parse(fs.readFileSync(voicesPath)); 
+    input  = JSON.parse(fs.readFileSync(scriptPath));
     
+    rmdirSync(ASSETS_PATH, false);
+
+    let modName = RX_MODULENAME.exec(__dirname);
+
+    // console.log(process.env);
+    // console.log(__filename);
+    // console.log(__dirname);
+
     for(let scene in input) {
 
-        for(let script in input[scene]) {
+        for(let track in input[scene].tracks) {
 
-            preProcessScript(input[scene][script].en);
+            preProcessScript(input[scene].tracks[track].en);
         }        
     }    
     updateProcessedScripts(scriptPath);
@@ -320,14 +357,14 @@ function compileScript() {
 
     for(let scene in input) {
 
-        for(let script in input[scene]) {
+        for(let track in input[scene].tracks) {
 
-            postProcessScript(input[scene][script].en, segID);
+            postProcessScript(input[scene].tracks[track].en, segID);
         }        
     }    
-     updateProcessedScripts(assetPath);
+    updateProcessedScripts(assetPath);
 
-
+    synthesizeSegments(input, voices);
 }
 
 
@@ -335,8 +372,155 @@ function updateProcessedScripts(path:string) {
 
     let scriptUpdate:string = JSON.stringify(input, null, '\t');
 
-    filesystem.writeFileSync(path, scriptUpdate, 'utf8');
+    fs.writeFileSync(path, scriptUpdate, 'utf8');
 }
 
+
+function clone(obj:any):any {
+    var copy:any;
+
+    // Handle the 3 simple types, and null or undefined
+    if (null == obj || "object" != typeof obj) return obj;
+
+    // Handle Array
+    if (obj instanceof Array) {
+        copy = [];
+        for (var i = 0, len = obj.length; i < len; i++) {
+            copy[i] = clone(obj[i]);
+        }
+        return copy;
+    }
+
+    // Handle Object
+    if (obj instanceof Object) {
+        copy = {};
+        for (var attr in obj) {
+            if (obj.hasOwnProperty(attr)) copy[attr] = clone(obj[attr]);
+        }
+        return copy;
+    }
+
+    throw new Error("Unable to copy obj! Its type isn't supported.");
+}
+
+
+function synthesizeSegments(input:any, languages:any) {
+
+    let outPath = ASSETS_PATH;
+
+    for(let scene in input) {
+
+        for(let track in input[scene].tracks) {
+
+            for(let lang in input[scene].tracks[track]) {
+
+                for(let seg of input[scene].tracks[track][lang].segments) {
+
+                    for(let segVal in seg) {
+
+                        if(seg[segVal].id) {
+
+                            for(let language in languages) {
+
+                                for(let voice in languages[language]) {
+
+                                    let _request:requestType = clone(languages[language][voice].request);
+
+                                    // \\ISP_TUTOR\\<moduleName>\\EFaudio\\EFassets\\<Lang>\\<sceneName>\\<<trackName>_s<segmentid>_v<voiceId>>.mp3
+                                    let filePath = outPath + "\\"  + lang + "\\" + scene;
+                                    let fileName = "\\" + track + "_s" + seg[segVal].id + "_v" + voice + ".mp3";
+
+                                    validatePath(filePath, null);
+
+                                    _request.input.ssml = TAG_SPEAKSTART + seg[segVal].SSML + TAG_SPEAKEND;
+                                    
+                                    filesRequested++;
+
+                                    synthesizeVOICE(_request, filePath+fileName);
+                                }
+                            }
+                        }
+                    }
+                }
+            }        
+        }        
+    }    
+}
+
+
+function synthesizeVOICE(request:requestType, outputFile:string) {
+
+    const textToSpeech = require('@google-cloud/text-to-speech');
+    const fs = require('fs');
+  
+    const client:any = new textToSpeech.TextToSpeechClient();  
+    
+    console.log(`Audio content  : ${request.input.ssml}`);
+    console.log(`Written to file: ${outputFile}`);
+
+    client.synthesizeSpeech(request, (err:any, response:any) => {
+        if (err) {
+          console.error('ERROR:', err);
+          return;
+        }
+    
+        filesProcessed++;
+        fs.writeFile(outputFile, response.audioContent, 'binary', (err:string) => {
+          if (err) {
+            console.error('ERROR:', err);
+            return;
+          }
+          console.log(`Audio content  : ${request.input.ssml}`);
+          console.log(`Audio content written to file: ${outputFile}`);
+          console.log(`Files Requested: ${filesRequested} -- Files Processed: ${filesProcessed}`);          
+        });
+    });              
+}
+ 
+
+function validatePath(path:string, folder:string) {
+
+    let pathArray:Array<string> = path.split("\\");
+
+    try {
+        let stat = fs.statSync(path);
+
+        if(stat.isDirectory) {
+
+            if(folder)
+                fs.mkdirSync(path + "\\" + folder);
+        }
+    }
+    catch(err) {
+
+        let last = pathArray.pop();
+        validatePath(pathArray.join("\\"), last);
+
+        if(folder)
+            fs.mkdirSync(path + "\\" + folder);
+    }
+}
+
+
+function rmdirSync(dir:string, delRoot:boolean) {
+
+	var list = fs.readdirSync(dir);
+	for(var i = 0; i < list.length; i++) {
+		var filename = path.join(dir, list[i]);
+		var stat = fs.statSync(filename);
+		
+		if(filename == "." || filename == "..") {
+			// pass these files
+		} else if(stat.isDirectory()) {
+			// rmdir recursively
+			rmdirSync(filename, true);
+		} else {
+			// rm fiilename
+			fs.unlinkSync(filename);
+		}
+    }
+    if(delRoot)
+	    fs.rmdirSync(dir);
+};
 
 compileScript();

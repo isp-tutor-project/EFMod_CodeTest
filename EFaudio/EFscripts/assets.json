@@ -1,366 +1,374 @@
 {
 	"SScene1": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>There   are,  <b>multiple</b> {{var1}} properties,  <span>which can be     {{var2}}     modified,</span>   using SSML.</p>",
-				"text": "There are, multiple{{var1}}properties, which can be{{var2}}modified, using SSML.",
-				"cueSet": "a.......................m.......................................................z",
-				"segments": [
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "0",
-							"SSML": "There are, multiple",
-							"cues": [
-								{
-									"a": 0
-								}
-							]
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>There   are,  <b>multiple</b> {{var1}} <span>which can be     {{var2}} </span>  when using SSML.</p>",
+					"text": "There are, multiple{{var1}}which can be{{var2}}when using SSML.",
+					"cueSet": "a.......................m.......................................................z",
+					"segments": [
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "0",
+								"SSML": "There are, multiple",
+								"cues": [
+									{
+										"a": 0
+									}
+								]
+							}
+						},
+						{
+							"templateVar": "var1",
+							"valname1": {
+								"id": "1a",
+								"SSML": "ways",
+								"cues": [
+									{
+										"m": 0.625
+									}
+								]
+							},
+							"valname2": {
+								"id": "1b",
+								"SSML": "things",
+								"cues": [
+									{
+										"m": 0.625
+									}
+								]
+							},
+							"valname3": {
+								"id": "1c",
+								"SSML": "possibilities",
+								"cues": [
+									{
+										"m": 0.625
+									}
+								]
+							}
+						},
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "2",
+								"SSML": "which can be",
+								"cues": []
+							}
+						},
+						{
+							"templateVar": "var2",
+							"valname1": {
+								"id": "3a",
+								"SSML": "evaluated",
+								"cues": []
+							},
+							"valname2": {
+								"id": "3b",
+								"SSML": "ignored",
+								"cues": []
+							},
+							"valname3": {
+								"id": "3c",
+								"SSML": "attempted",
+								"cues": []
+							}
+						},
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "4",
+								"SSML": "when using SSML.",
+								"cues": [
+									{
+										"z": 1
+									}
+								]
+							}
 						}
-					},
-					{
-						"templateVar": "var1",
-						"valname1": {
-							"id": "1a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"m": 0.625
-								}
-							]
+					],
+					"timedSet": [
+						{
+							"event1": "+150"
 						},
-						"valname2": {
-							"id": "1b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"m": 0.625
-								}
-							]
-						},
-						"valname3": {
-							"id": "1c",
-							"SSML": "last possibility",
-							"cues": [
-								{
-									"m": 0.625
-								}
-							]
+						{
+							"event2": "-100"
 						}
-					},
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "2",
-							"SSML": "properties, which can be",
-							"cues": []
+					],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "ways",
+								"valname2": "things",
+								"valname3": "possibilities"
+							},
+							"notes": ""
+						},
+						"var2": {
+							"values": {
+								"valname1": "evaluated",
+								"valname2": "ignored",
+								"valname3": "attempted"
+							},
+							"notes": ""
 						}
-					},
-					{
-						"templateVar": "var2",
-						"valname1": {
-							"id": "3a",
-							"SSML": "valueA",
-							"cues": []
-						},
-						"valname2": {
-							"id": "3b",
-							"SSML": "valueB",
-							"cues": []
-						},
-						"valname3": {
-							"id": "3c",
-							"SSML": "ValueC",
-							"cues": []
-						}
-					},
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "4",
-							"SSML": "modified, using SSML.",
-							"cues": [
-								{
-									"z": 1
-								}
-							]
-						}
-					}
-				],
-				"timedSet": [
-					{
-						"event1": "+150"
-					},
-					{
-						"event2": "-100"
-					}
-				],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
-					},
-					"var2": {
-						"values": {
-							"valname1": "valueA",
-							"valname2": "valueB",
-							"valname3": "ValueC"
-						},
-						"notes": ""
 					}
 				}
-			}
-		},
-		"tedIntro2": {
-			"en": {
-				"html": "<p>{{var1}}There are many properties.{{var2}}</p>",
-				"text": "{{var1}}There are many properties.{{var2}}",
-				"cueSet": ".......a.................",
-				"segments": [
-					{
-						"templateVar": "var1",
-						"valname1": {
-							"id": "0a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"a": 0.875
-								}
-							]
+			},
+			"tedIntro2": {
+				"en": {
+					"html": "<p>{{var1}}There are many properties.{{var2}}</p>",
+					"text": "{{var1}}There are many properties.{{var2}}",
+					"cueSet": ".......a.................",
+					"segments": [
+						{
+							"templateVar": "var1",
+							"valname1": {
+								"id": "0a",
+								"SSML": "string1",
+								"cues": [
+									{
+										"a": 0.875
+									}
+								]
+							},
+							"valname2": {
+								"id": "0b",
+								"SSML": "possible string2",
+								"cues": [
+									{
+										"a": 0.875
+									}
+								]
+							},
+							"valname3": {
+								"id": "0c",
+								"SSML": "last possibility",
+								"cues": [
+									{
+										"a": 0.875
+									}
+								]
+							}
 						},
-						"valname2": {
-							"id": "0b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"a": 0.875
-								}
-							]
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "1",
+								"SSML": "There are many properties.",
+								"cues": []
+							}
 						},
-						"valname3": {
-							"id": "0c",
-							"SSML": "last possibility",
-							"cues": [
-								{
-									"a": 0.875
-								}
-							]
+						{
+							"templateVar": "var2",
+							"valname1": {
+								"id": "2a",
+								"SSML": "valueA",
+								"cues": []
+							},
+							"valname2": {
+								"id": "2b",
+								"SSML": "valueB",
+								"cues": []
+							},
+							"valname3": {
+								"id": "2c",
+								"SSML": "ValueC",
+								"cues": []
+							}
 						}
-					},
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "1",
-							"SSML": "There are many properties.",
-							"cues": []
+					],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
+						},
+						"var2": {
+							"values": {
+								"valname1": "valueA",
+								"valname2": "valueB",
+								"valname3": "ValueC"
+							},
+							"notes": ""
 						}
-					},
-					{
-						"templateVar": "var2",
-						"valname1": {
-							"id": "2a",
-							"SSML": "valueA",
-							"cues": []
-						},
-						"valname2": {
-							"id": "2b",
-							"SSML": "valueB",
-							"cues": []
-						},
-						"valname3": {
-							"id": "2c",
-							"SSML": "ValueC",
-							"cues": []
-						}
-					}
-				],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
-					},
-					"var2": {
-						"values": {
-							"valname1": "valueA",
-							"valname2": "valueB",
-							"valname3": "ValueC"
-						},
-						"notes": ""
 					}
 				}
 			}
 		}
 	},
 	"SScene2": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>There are many {{var1}} properties.</p>",
-				"text": "There are many{{var1}}properties.",
-				"cueSet": "...a...............n...............",
-				"segments": [
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "0",
-							"SSML": "There are many",
-							"cues": [
-								{
-									"a": 0.21428571428571427
-								}
-							]
-						}
-					},
-					{
-						"templateVar": "var1",
-						"valname1": {
-							"id": "1a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"n": 0.625
-								}
-							]
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>There are many {{var1}} properties.</p>",
+					"text": "There are many{{var1}}properties.",
+					"cueSet": "...a...............n...............",
+					"segments": [
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "0",
+								"SSML": "There are many",
+								"cues": [
+									{
+										"a": 0.21428571428571427
+									}
+								]
+							}
 						},
-						"valname2": {
-							"id": "1b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"n": 0.625
-								}
-							]
+						{
+							"templateVar": "var1",
+							"valname1": {
+								"id": "1a",
+								"SSML": "string1",
+								"cues": [
+									{
+										"n": 0.625
+									}
+								]
+							},
+							"valname2": {
+								"id": "1b",
+								"SSML": "possible string2",
+								"cues": [
+									{
+										"n": 0.625
+									}
+								]
+							},
+							"valname3": {
+								"id": "1c",
+								"SSML": "last possibility",
+								"cues": [
+									{
+										"n": 0.625
+									}
+								]
+							}
 						},
-						"valname3": {
-							"id": "1c",
-							"SSML": "last possibility",
-							"cues": [
-								{
-									"n": 0.625
-								}
-							]
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "2",
+								"SSML": "properties.",
+								"cues": []
+							}
 						}
-					},
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "2",
-							"SSML": "properties.",
-							"cues": []
+					],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
 						}
-					}
-				],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
 					}
 				}
 			}
 		}
 	},
 	"SScene3": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>{{var1}}</p>",
-				"text": "{{var1}}",
-				"cueSet": "...a...............n...............",
-				"segments": [
-					{
-						"templateVar": "var1",
-						"valname1": {
-							"id": "0a",
-							"SSML": "string1",
-							"cues": [
-								{
-									"a": 0.375
-								},
-								{
-									"n": 1
-								}
-							]
-						},
-						"valname2": {
-							"id": "0b",
-							"SSML": "possible string2",
-							"cues": [
-								{
-									"a": 0.375
-								},
-								{
-									"n": 1
-								}
-							]
-						},
-						"valname3": {
-							"id": "0c",
-							"SSML": "last possibility",
-							"cues": [
-								{
-									"a": 0.375
-								},
-								{
-									"n": 1
-								}
-							]
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>{{var1}}</p>",
+					"text": "{{var1}}",
+					"cueSet": "...a...............n...............",
+					"segments": [
+						{
+							"templateVar": "var1",
+							"valname1": {
+								"id": "0a",
+								"SSML": "string1",
+								"cues": [
+									{
+										"a": 0.375
+									},
+									{
+										"n": 1
+									}
+								]
+							},
+							"valname2": {
+								"id": "0b",
+								"SSML": "possible string2",
+								"cues": [
+									{
+										"a": 0.375
+									},
+									{
+										"n": 1
+									}
+								]
+							},
+							"valname3": {
+								"id": "0c",
+								"SSML": "last possibility",
+								"cues": [
+									{
+										"a": 0.375
+									},
+									{
+										"n": 1
+									}
+								]
+							}
 						}
-					}
-				],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
+					],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
+						}
 					}
 				}
 			}
 		}
 	},
 	"SScene4": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>This is just plain text no templates.</p>",
-				"text": "This is just plain text no templates.",
-				"cueSet": "...a...............n......................z",
-				"segments": [
-					{
-						"templateVar": "__novar",
-						"__novar": {
-							"id": "0",
-							"SSML": "This is just plain text no templates.",
-							"cues": [
-								{
-									"a": 0.08108108108108109
-								},
-								{
-									"n": 0.5135135135135135
-								},
-								{
-									"z": 1
-								}
-							]
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>This is just plain text no templates.</p>",
+					"text": "This is just plain text no templates.",
+					"cueSet": "...a...............n......................z",
+					"segments": [
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "0",
+								"SSML": "This is just plain text no templates.",
+								"cues": [
+									{
+										"a": 0.08108108108108109
+									},
+									{
+										"n": 0.5135135135135135
+									},
+									{
+										"z": 1
+									}
+								]
+							}
 						}
-					}
-				],
-				"timedSet": [],
-				"templates": {}
+					],
+					"timedSet": [],
+					"templates": {}
+				}
 			}
 		}
 	}

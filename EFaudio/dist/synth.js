@@ -116,23 +116,4 @@ const requests = [
         audioConfig: { audioEncoding: 'MP3' },
     }
 ];
-// Performs the Text-to-Speech request
-for (let request of metaReq) {
-    client.synthesizeSpeech(request, (err, response) => {
-        if (err) {
-            console.error('ERROR:', err);
-            return;
-        }
-        let filename = request.voice.ssmlGender + "_" + request.voice.name + ".mp3";
-        filename = "metadatatest.mp3";
-        // Write the binary audio content to a local file
-        fs.writeFile(filename, response.audioContent, 'binary', (err) => {
-            if (err) {
-                console.error('ERROR:', err);
-                return;
-            }
-            console.log('Audio content written to file: ' + filename);
-        });
-    });
-}
 //# sourceMappingURL=synth.js.map

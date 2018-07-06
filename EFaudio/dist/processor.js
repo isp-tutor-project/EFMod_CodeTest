@@ -29,8 +29,8 @@ const fileList = [
     // "/SodaExpScript_choice.json"
 ];
 const filePath = "scripts/RQMod_0.0.1";
-let filesRequested = 0;
-let filesProcessed = 0;
+// let filesRequested:number = 0;
+// let filesProcessed:number = 0;
 function clone(obj) {
     var copy;
     // Handle the 3 simple types, and null or undefined

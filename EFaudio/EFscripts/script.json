@@ -1,118 +1,126 @@
 {
 	"SScene1": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>There   are,  <b>multiple</b> {{var1}} properties,  <span>which can be     {{var2}}     modified,</span>   using SSML.</p>",
-				"text": "There are, multiple{{var1}}properties, which can be{{var2}}modified, using SSML.",
-				"cueSet": "a.......................m.......................................................z",
-				"segments": [],
-				"timedSet": [
-					{
-						"event1": "+150"
-					},
-					{
-						"event2": "-100"
-					}
-				],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>There   are,  <b>multiple</b> {{var1}} <span>which can be     {{var2}} </span>  when using SSML.</p>",
+					"text": "There are, multiple{{var1}}which can be{{var2}}when using SSML.",
+					"cueSet": "a.......................m.......................................................z",
+					"segments": [],
+					"timedSet": [
+						{
+							"event1": "+150"
 						},
-						"notes": ""
-					},
-					"var2": {
-						"values": {
-							"valname1": "valueA",
-							"valname2": "valueB",
-							"valname3": "ValueC"
+						{
+							"event2": "-100"
+						}
+					],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "ways",
+								"valname2": "things",
+								"valname3": "possibilities"
+							},
+							"notes": ""
 						},
-						"notes": ""
+						"var2": {
+							"values": {
+								"valname1": "evaluated",
+								"valname2": "ignored",
+								"valname3": "attempted"
+							},
+							"notes": ""
+						}
 					}
 				}
-			}
-		},
-		"tedIntro2": {
-			"en": {
-				"html": "<p>{{var1}}There are many properties.{{var2}}</p>",
-				"text": "{{var1}}There are many properties.{{var2}}",
-				"cueSet": ".......a.................",
-				"segments": [],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
+			},
+			"tedIntro2": {
+				"en": {
+					"html": "<p>{{var1}}There are many properties.{{var2}}</p>",
+					"text": "{{var1}}There are many properties.{{var2}}",
+					"cueSet": ".......a.................",
+					"segments": [],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
 						},
-						"notes": ""
-					},
-					"var2": {
-						"values": {
-							"valname1": "valueA",
-							"valname2": "valueB",
-							"valname3": "ValueC"
-						},
-						"notes": ""
+						"var2": {
+							"values": {
+								"valname1": "valueA",
+								"valname2": "valueB",
+								"valname3": "ValueC"
+							},
+							"notes": ""
+						}
 					}
 				}
 			}
 		}
 	},
 	"SScene2": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>There are many {{var1}} properties.</p>",
-				"text": "There are many{{var1}}properties.",
-				"cueSet": "...a...............n...............",
-				"segments": [],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>There are many {{var1}} properties.</p>",
+					"text": "There are many{{var1}}properties.",
+					"cueSet": "...a...............n...............",
+					"segments": [],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
+						}
 					}
 				}
 			}
 		}
 	},
 	"SScene3": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>{{var1}}</p>",
-				"text": "{{var1}}",
-				"cueSet": "...a...............n...............",
-				"segments": [],
-				"timedSet": [],
-				"templates": {
-					"var1": {
-						"values": {
-							"valname1": "string1",
-							"valname2": "possible string2",
-							"valname3": "last possibility"
-						},
-						"notes": ""
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>{{var1}}</p>",
+					"text": "{{var1}}",
+					"cueSet": "...a...............n...............",
+					"segments": [],
+					"timedSet": [],
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "string1",
+								"valname2": "possible string2",
+								"valname3": "last possibility"
+							},
+							"notes": ""
+						}
 					}
 				}
 			}
 		}
 	},
 	"SScene4": {
-		"tedIntro1": {
-			"en": {
-				"html": "<p>This is just plain text no templates.</p>",
-				"text": "This is just plain text no templates.",
-				"cueSet": "...a...............n......................z",
-				"segments": [],
-				"timedSet": [],
-				"templates": {}
+		"tracks": {
+			"tedIntro1": {
+				"en": {
+					"html": "<p>This is just plain text no templates.</p>",
+					"text": "This is just plain text no templates.",
+					"cueSet": "...a...............n......................z",
+					"segments": [],
+					"timedSet": [],
+					"templates": {}
+				}
 			}
 		}
 	}

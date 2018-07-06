@@ -58,8 +58,8 @@ const fileList:Array<string> = [
 ]
 
 const filePath:string     = "scripts/RQMod_0.0.1";
-let filesRequested:number = 0;
-let filesProcessed:number = 0;
+// let filesRequested:number = 0;
+// let filesProcessed:number = 0;
 
 function clone(obj:any):any {
     var copy:any;
