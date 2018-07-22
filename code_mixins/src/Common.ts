@@ -21,20 +21,21 @@ namespace EFTut_Suppl.EFMOD_CODETEST {
         // Tutor graph methods
         //
         
-        public $oncreate() { /* empty */  }
+        public $onCreateScene() { /* empty */  }
 
-        public $onenter() { /* empty */  }
+        public $preEnterScene() { /* empty */  }
+        public $onEnterScene()  { /* empty */  }
         
-        public $preenter() { /* empty */  }
+        public $preExitScene() { /* empty */  }
+        public $onExitScene()  { /* empty */  }
 
-        public $preexit() { /* empty */  }
+        public $demoInitScene() { /* empty */  }
 
-        public $demoinit() { /* empty */  }
+        public $logScene() { /* empty */  }
 
-        public $logging() { /* empty */  }
+        public $rewindScene() { /* empty */  }
 
-        public $rewind() { /* empty */  }
-
+        public $resolveTemplate(templID:string) { /* empty */  }
 
         //***********************************************
         // Scene graph methods
@@ -54,9 +55,11 @@ namespace EFTut_Suppl.EFMOD_CODETEST {
             return result;
         }
 
-        public $cuePoints(script:string, id:string) { /* empty */  }
+        // Track methods.
+        // 
+        public $cuePoints(id:string) { /* empty */  }
 
-        public $timedEvents(script:string, id:string) { /* empty */  }
+        public $timedEvents(id:string) { /* empty */  }
 
     }   
 }

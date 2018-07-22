@@ -1,0 +1,91 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Assets/TC_TButton__NavButton" itemID="5b40ff12-00000306" symbolType="button" lastModified="1531070796">
+  <persistentData>
+    <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
+  </persistentData>
+  <timeline>
+    <DOMTimeline name="TC_TButton__NavButton">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="228" objectHeight="228" x="-114" y="1086" endAngle="0">
+                  <matrix>
+                    <Matrix tx="114" ty="-1086"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0000FF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="228" objectHeight="228" x="-114" y="1086" endAngle="0">
+                  <matrix>
+                    <Matrix tx="114" ty="-1086"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#33CC66"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="228" objectHeight="228" x="-114" y="1086" endAngle="0">
+                  <matrix>
+                    <Matrix tx="114" ty="-1086"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#66FF33"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="228" objectHeight="228" x="-114" y="1086" endAngle="0">
+                  <matrix>
+                    <Matrix tx="114" ty="-1086"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFF33"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,125 +1,54 @@
 {
 	"SScene1": {
 		"tracks": {
-			"tedIntro1": {
+			"track1": {
 				"en": {
-					"html": "<p>There   are,  <b>multiple</b> {{var1}} <span>which can be     {{var2}} </span>  when using SSML.</p>",
-					"text": "There are, multiple{{var1}}which can be{{var2}}when using SSML.",
-					"cueSet": "a.......................m.......................................................z",
-					"segments": [],
-					"timedSet": [
-						{
-							"event1": "+150"
-						},
-						{
-							"event2": "-100"
-						}
-					],
+					"html": "<p>There   are{{var1}}  <span id='item1'>speech</span> parameters which can be manipulated   when  using  SSML.</p>",
 					"templates": {
 						"var1": {
 							"values": {
-								"valname1": "ways",
-								"valname2": "things",
-								"valname3": "possibilities"
+								"valname1": "multiple",
+								"valname2": "several",
+								"valname3": "some"
 							},
-							"notes": ""
-						},
-						"var2": {
-							"values": {
-								"valname1": "evaluated",
-								"valname2": "ignored",
-								"valname3": "attempted"
-							},
+							"volume": 0.8,
 							"notes": ""
 						}
-					}
+					},
+					"text": "There are{{var1}}speech parameters which can be manipulated when using SSML.",
+					"cueSet": "a................b.....................................................z",
+					"segments": [],
+					"timedSet": [],
+					"trim": [
+						70,
+						0,
+						0
+					],
+					"volume": 1
 				}
 			},
-			"tedIntro2": {
+			"track2": {
 				"en": {
-					"html": "<p>{{var1}}There are many properties.{{var2}}</p>",
-					"text": "{{var1}}There are many properties.{{var2}}",
-					"cueSet": ".......a.................",
-					"segments": [],
-					"timedSet": [],
+					"html": "$$EFL.htmltext.textitem1",
 					"templates": {
 						"var1": {
 							"values": {
-								"valname1": "string1",
-								"valname2": "possible string2",
-								"valname3": "last possibility"
+								"valname1": "value1",
+								"valname2": "value2",
+								"valname3": "value3"
 							},
-							"notes": ""
-						},
-						"var2": {
-							"values": {
-								"valname1": "valueA",
-								"valname2": "valueB",
-								"valname3": "ValueC"
-							},
+							"volume": 0.8,
 							"notes": ""
 						}
-					}
-				}
-			}
-		}
-	},
-	"SScene2": {
-		"tracks": {
-			"tedIntro1": {
-				"en": {
-					"html": "<p>There are many {{var1}} properties.</p>",
-					"text": "There are many{{var1}}properties.",
-					"cueSet": "...a...............n...............",
+					},
+					"text": "This is a test to see how the audio sounds.",
+					"cueSet": "a................b.....................................................z",
 					"segments": [],
 					"timedSet": [],
-					"templates": {
-						"var1": {
-							"values": {
-								"valname1": "string1",
-								"valname2": "possible string2",
-								"valname3": "last possibility"
-							},
-							"notes": ""
-						}
-					}
-				}
-			}
-		}
-	},
-	"SScene3": {
-		"tracks": {
-			"tedIntro1": {
-				"en": {
-					"html": "<p>{{var1}}</p>",
-					"text": "{{var1}}",
-					"cueSet": "...a...............n...............",
-					"segments": [],
-					"timedSet": [],
-					"templates": {
-						"var1": {
-							"values": {
-								"valname1": "string1",
-								"valname2": "possible string2",
-								"valname3": "last possibility"
-							},
-							"notes": ""
-						}
-					}
-				}
-			}
-		}
-	},
-	"SScene4": {
-		"tracks": {
-			"tedIntro1": {
-				"en": {
-					"html": "<p>This is just plain text no templates.</p>",
-					"text": "This is just plain text no templates.",
-					"cueSet": "...a...............n......................z",
-					"segments": [],
-					"timedSet": [],
-					"templates": {}
+					"trim": [
+						0
+					],
+					"volume": 1
 				}
 			}
 		}

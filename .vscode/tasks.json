@@ -4,15 +4,10 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "typescript",
-            "tsconfig": "Utils\\GUIDGen\\tsconfig.json",
-            "problemMatcher": [
-                "$tsc"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
+            "type": "npm",
+            "script": "build",
+            "path": "code_mixins/",
+            "problemMatcher": []
         }
     ]
 }

@@ -1,0 +1,54 @@
+{
+    "SScene1": {
+        "SInput": {
+            "$$REF":"$$EFL.textinput.Input1A"
+        },
+        "SShape1": {
+            "xname":"SShape1"            
+        },
+        "SShape2": {
+            "xname":"SShape2"            
+        }
+    },
+
+    "SScene2": {
+        "SInput": {
+            "xname":"SInput1"
+        },
+        "SShape1": {
+            "xname":"SShape1"            
+        },
+        "SShape2": {
+            "xname":"SShape3"            
+        }
+    },
+
+    "SScene3": {},
+
+    "SScene4": {},
+
+    "_LIBRARY": {
+        "htmltext": {
+            "textitem1":{
+                "html":"<p>This is a test to see how the audio sounds.</p>",
+                "templates": {
+                    "var1": {
+                        "values": {
+                            "valname1": "value1",
+                            "valname2": "value2",
+                            "valname3": "value3"
+                        },
+                        "volume": 0.8,
+                        "notes": ""
+                    }
+                }
+            }
+        },
+        "textinput": {
+            "Input1A": {
+                "xname":"SInput1",
+                "startText":"Enter your answer here."
+            }
+        }
+    }
+}

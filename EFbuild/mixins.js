@@ -1,7 +1,7 @@
 var EFTut_Suppl;
 (function (EFTut_Suppl) {
-    var EFMod_CodeTest;
-    (function (EFMod_CodeTest) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
         class CONST {
         }
         CONST.TUTORCONTAINER = "STutorContainer";
@@ -13,21 +13,23 @@ var EFTut_Suppl;
         CONST.MOUSE_CLICK = "click";
         CONST.DOUBLE_CLICK = "dblclick";
         CONST.CLICK = "click";
-        EFMod_CodeTest.CONST = CONST;
-    })(EFMod_CodeTest = EFTut_Suppl.EFMod_CodeTest || (EFTut_Suppl.EFMod_CodeTest = {}));
+        EFMOD_CODETEST.CONST = CONST;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
 })(EFTut_Suppl || (EFTut_Suppl = {}));
 var EFTut_Suppl;
 (function (EFTut_Suppl) {
-    var EFMod_CodeTest;
-    (function (EFMod_CodeTest) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
         class $Common {
-            $oncreate() { }
-            $onenter() { }
-            $preenter() { }
-            $preexit() { }
-            $demoinit() { }
-            $logging() { }
-            $rewind() { }
+            $onCreateScene() { }
+            $preEnterScene() { }
+            $onEnterScene() { }
+            $preExitScene() { }
+            $onExitScene() { }
+            $demoInitScene() { }
+            $logScene() { }
+            $rewindScene() { }
+            $resolveTemplate(templID) { }
             $nodePreEnter(nodeId) { }
             $nodePreExit(nodeId) { }
             $nodeAction(actionId) { }
@@ -35,30 +37,36 @@ var EFTut_Suppl;
                 let result = false;
                 return result;
             }
-            $cuePoints(script, id) { }
-            $timedEvents(script, id) { }
+            $cuePoints(id) { }
+            $timedEvents(id) { }
         }
-        EFMod_CodeTest.$Common = $Common;
-    })(EFMod_CodeTest = EFTut_Suppl.EFMod_CodeTest || (EFTut_Suppl.EFMod_CodeTest = {}));
+        EFMOD_CODETEST.$Common = $Common;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
 })(EFTut_Suppl || (EFTut_Suppl = {}));
 var EFTut_Suppl;
 (function (EFTut_Suppl) {
-    var EFMod_CodeTest;
-    (function (EFMod_CodeTest) {
-        class Scene1 {
-            $oncreate() {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
+        class SNavigator {
+            $onCreateScene() {
+                console.log("$Navigator created");
+                this.connectNavButton(EFMOD_CODETEST.CONST.NEXTSCENE, "Snext");
+                this.connectNavButton(EFMOD_CODETEST.CONST.PREVSCENE, "Sback");
             }
-            $onenter() {
+            $onEnterScene() {
             }
-            $preenter() {
+            $preEnterScene() {
             }
-            $preexit() {
+            $preExitScene() {
             }
-            $demoinit() {
+            $demoInitScene() {
             }
-            $logging() {
+            $logScene() {
             }
-            $rewind() {
+            $rewindScene() {
+            }
+            $resolveTemplate(templID) {
+                return this["$" + templID];
             }
             $nodePreEnter(nodeId) {
             }
@@ -74,74 +82,164 @@ var EFTut_Suppl;
                 }
             }
             $nodeConstraint(constrainId) {
-                let result;
+                let result = false;
                 return result;
             }
-            $cuePoints(script, id) {
+            $cuePoints(trackID, cueID) {
+                switch (cueID) {
+                    case "$start":
+                        console.log("executing CuePoint START");
+                        break;
+                    case "$end":
+                        console.log("executing CuePoint END");
+                        break;
+                    case "a":
+                        console.log("executing CuePoint 1");
+                        break;
+                    case "b":
+                        console.log("executing CuePoint 2");
+                        break;
+                    case "z":
+                        console.log("executing CuePoint 3");
+                        break;
+                }
             }
-            $timedEvents(script, id) {
-            }
-        }
-        EFMod_CodeTest.Scene1 = Scene1;
-        class Scene2 {
-            $oncreate() {
-                this["SPurpleCircle"].xname = "SPurpleCircle";
-                this["SInput"].xname = "SInput";
-                this["SRect1"].xname = "SRect1";
-            }
-            $preenter() {
-                this.connectNavButton(EFMod_CodeTest.CONST.NEXTSCENE, "SPurpleCircle");
-            }
-            $preexit() {
-            }
-            $demoinit() {
-            }
-            $logging() {
-            }
-            $rewind() {
+            $timedEvents(id) {
             }
         }
-        EFMod_CodeTest.Scene2 = Scene2;
-        class Scene3 {
-            $oncreate() {
-                this["SPurpleCircle"].xname = "SPurpleCircle";
+        EFMOD_CODETEST.SNavigator = SNavigator;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
+})(EFTut_Suppl || (EFTut_Suppl = {}));
+var EFTut_Suppl;
+(function (EFTut_Suppl) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
+        class SScene1 {
+            constructor() {
+                this.$var1 = "valname2";
             }
-            $preenter() {
-                this.connectNavButton(EFMod_CodeTest.CONST.NEXTSCENE, "SPurpleCircle");
+            $onCreateScene() {
             }
-            $preexit() {
+            $onEnterScene() {
+            }
+            $preEnterScene() {
+            }
+            $preExitScene() {
+            }
+            $demoInitScene() {
+            }
+            $logScene() {
+            }
+            $rewindScene() {
+            }
+            $resolveTemplate(templID) {
+                return this["$" + templID];
+            }
+            $nodePreEnter(nodeId) {
+            }
+            $nodePreExit(nodeId) {
+            }
+            $nodeAction(actionId) {
+                switch (actionId) {
+                    case "ENTER1":
+                        this.setButtonBehavior('incrAnimation');
+                        this.fComplete = false;
+                        this.updateNav();
+                        break;
+                }
+            }
+            $nodeConstraint(constrainId) {
+                let result = false;
+                return result;
+            }
+            $cuePoints(trackID, cueID) {
+                switch (trackID) {
+                    case "track1":
+                        switch (cueID) {
+                            case "$start":
+                                console.log("executing CuePoint START");
+                                break;
+                            case "$end":
+                                console.log("executing CuePoint END");
+                                break;
+                            case "a":
+                                console.log("executing CuePoint 1");
+                                break;
+                            case "b":
+                                console.log("executing CuePoint 2");
+                                this.SShape1.visible = false;
+                                break;
+                            case "z":
+                                console.log("executing CuePoint 3");
+                                this.SShape1.visible = true;
+                                break;
+                        }
+                        break;
+                }
+            }
+            $timedEvents(id) {
+            }
+        }
+        EFMOD_CODETEST.SScene1 = SScene1;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
+})(EFTut_Suppl || (EFTut_Suppl = {}));
+var EFTut_Suppl;
+(function (EFTut_Suppl) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
+        class SScene2 {
+            $onCreateScene() {
+            }
+            $preEnterScene() {
+            }
+        }
+        EFMOD_CODETEST.SScene2 = SScene2;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
+})(EFTut_Suppl || (EFTut_Suppl = {}));
+var EFTut_Suppl;
+(function (EFTut_Suppl) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
+        class SScene3 {
+            $onCreateScene() {
+            }
+            $preEnterScene() {
+            }
+            $preExitScene() {
             }
             $onexit() {
-                this["SPurpleCircle"].enableButton(false);
             }
-            $demoinit() {
+            $demoInitScene() {
             }
-            $logging() {
+            $logScene() {
             }
-            $rewind() {
-            }
-        }
-        EFMod_CodeTest.Scene3 = Scene3;
-        class Scene4 {
-            $oncreate() {
-                this["SPurpleCircle"].xname = "SPurpleCircle";
-            }
-            $onenter() {
-                this["SPurpleCircle"].enableButton(false);
-            }
-            $preenter() {
-                this["SPurpleCircle"].enableButton(false);
-            }
-            $preexit() {
-            }
-            $demoinit() {
-            }
-            $logging() {
-            }
-            $rewind() {
+            $rewindScene() {
             }
         }
-        EFMod_CodeTest.Scene4 = Scene4;
-    })(EFMod_CodeTest = EFTut_Suppl.EFMod_CodeTest || (EFTut_Suppl.EFMod_CodeTest = {}));
+        EFMOD_CODETEST.SScene3 = SScene3;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
+})(EFTut_Suppl || (EFTut_Suppl = {}));
+var EFTut_Suppl;
+(function (EFTut_Suppl) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
+        class SScene4 {
+            $onCreateScene() {
+            }
+            $onEnterScene() {
+            }
+            $preEnterScene() {
+            }
+            $preExitScene() {
+            }
+            $demoInitScene() {
+            }
+            $logScene() {
+            }
+            $rewindScene() {
+            }
+        }
+        EFMOD_CODETEST.SScene4 = SScene4;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
 })(EFTut_Suppl || (EFTut_Suppl = {}));
 //# sourceMappingURL=mixins.js.map

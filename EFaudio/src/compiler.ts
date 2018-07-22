@@ -16,8 +16,22 @@
 
 'use strict';
 
+import {convert} from "./converter";
+
+import { findArray, 
+         segment, 
+         scriptInstance, 
+         templVar, 
+         templValue, 
+         cuePoint, 
+         requestType, 
+         segmentVal} from "./IAudioTypes";
+
 const fs   = require('fs');
 const path = require('path');
+
+const TEMPLATEVAR:string = "templateVar"; 
+const LIBRARY_SRC:string = "$$EFL";
 
 const RX_SGMLTAGS   = /<[^>\r]*>/g;
 const RX_DUPWHITESP = /\s+/g;
@@ -30,6 +44,8 @@ const RX_DUPPUNCT   = /\s+([,\.])+\s/g;
 const RX_MODULENAME = /EFMod_\w*/;
 
 const ASSETS_PATH   = "EFAudio/EFassets";
+const TYPE_MP3      = ".mp3";
+const TYPE_WAV      = ".wav";
 
 const ASCII_a       = 97;
 const ASCII_A       = 65;
@@ -41,7 +57,11 @@ const TAG_SPEAKEND   = "</speak>";
 const voicesPath:string   = "EFAudio/EFscripts/languagevoice.json";
 const originalPath:string = "EFAudio/EFscripts/original.json";
 const scriptPath:string   = "EFAudio/EFscripts/script.json";
-const assetPath:string    = "EFAudio/EFscripts/assets.json";
+const assetPath:string    = "EFAudio/EFscripts/script_assets.json";
+const libraryPath:string  = "EFdata/data_assets.json";
+
+let lib_Loaded:boolean = false;
+let library:any;
 
 let voices:any; 
 let input:any;
@@ -55,83 +75,58 @@ let filesRequested:number = 0;
 let filesProcessed:number = 0;
 
 
+function compileScript() {
 
-interface InputType {
-    ssml:string;
-    text:string;
+    let segID = ZERO_SEGID;
+    let promises;
+
+    voices = JSON.parse(fs.readFileSync(voicesPath)); 
+    input  = JSON.parse(fs.readFileSync(scriptPath));
+    
+    rmdirSync(ASSETS_PATH, false);
+
+    let modName = RX_MODULENAME.exec(__dirname);
+
+    // console.log(process.env);
+    // console.log(__filename);
+    // console.log(__dirname);
+
+    for(let scene in input) {
+
+        for(let track in input[scene].tracks) {
+
+            preProcessScript(input[scene].tracks[track].en);
+        }        
+    }    
+
+    for(let scene in input) {
+
+        for(let track in input[scene].tracks) {
+
+            postProcessScript(input[scene].tracks[track].en, segID);
+        }        
+    }    
+
+    promises = synthesizeSegments(input, voices);
+
+    Promise.all(promises).then(() => {
+        updateProcessedScripts(assetPath);
+        console.log("Assets Processing Complete!");
+
+        // Strip the segmentation from the script - just to make it easier to read
+        // We do this here so that the trim arrary is initialized
+        // 
+        for(let scene in input) {
+
+            for(let track in input[scene].tracks) {
+    
+                input[scene].tracks[track].en.segments  = [];
+            }        
+        }    
+        updateProcessedScripts(scriptPath);
+        console.log("Script Processing Complete!");    
+    });
 }
-
-interface VoiceType {
-    name:string;
-    languageCode:string;
-    ssmlGender:string;
-}
-
-interface AudioType {
-    audioEncoding:string;
-}
-
-interface requestType {
-    input:InputType;
-    voice:VoiceType;
-    audioConfig:AudioType;
-}
-
-interface template {
-
-    [key: string]: templVar;
-}
-interface templVar {
-
-    values: templValue;    
-}
-interface templValue {
-
-    [key: string]: string;    
-}
-
-
-
-interface segment {
-
-    templateVar: string;
-
-    [key: string]: segmentVal|string;
-}
-interface segmentVal {
-
-    id:string;
-    SSML: string;
-    cues: Array<cuePoint>;
-}
-interface cuePoint {
-
-    [key: string]: number;
-}
-
-
-interface timedEvents {
-
-    [key: string]: string;
-
-    start:string;
-    end:string;
-}
-
-interface scriptInstance {
-    html:string;
-    text:string;
-    cueSet:string;
-    segments:Array<segment>;
-    timedSet:Array<timedEvents>;
-    templates: any;
-}
-
-interface findArray extends Array<string> {
-    index:number;
-    endIndex?:number;
-}
-
 
 
 function enumerateItems(regex:RegExp, text:string) : Array<findArray> {
@@ -143,17 +138,58 @@ function enumerateItems(regex:RegExp, text:string) : Array<findArray> {
 
         templArray.push(templ);
         templ.endIndex = regex.lastIndex;
-        console.log(`Found ${templ[0]} at: ${templ.index} Next starts at ${regex.lastIndex}.`);
+        // console.log(`Found ${templ[0]} at: ${templ.index} Next starts at ${regex.lastIndex}.`);
     }
 
     return templArray;
 }
 
 
+function load_Library() {
+
+    if(!lib_Loaded) {
+        library    = JSON.parse(fs.readFileSync(libraryPath));
+        lib_Loaded = true;
+
+    }
+}
+
+
+function resolveSource(inst:scriptInstance) : string {
+
+    let result:string;
+
+    try {
+        if(inst.html.startsWith(LIBRARY_SRC)) {
+
+            let srcPath:Array<string> = inst.html.split(".");
+
+            load_Library();
+
+            let libval = library._LIBRARY[srcPath[1]][srcPath[2]];
+
+            result         = libval.html;
+            inst.templates = libval.templates || {};
+        }
+        else {
+            result = inst.html;
+        }
+    }
+    catch(err) {
+
+        console.error("Library Load Failed: " + err);
+    }
+
+    return result;
+}
+
+
 function preProcessScript(inst:scriptInstance) {
-              
+
+    let html:string = resolveSource(inst);
+
     // Remove all HTML/SSML tags
-    inst.text = inst.html.replace(RX_SGMLTAGS,"");
+    inst.text = html.replace(RX_SGMLTAGS,"");
 
     // Remove duplicate whitespace
     inst.text = inst.text.replace(RX_DUPWHITESP," ");
@@ -167,12 +203,24 @@ function preProcessScript(inst:scriptInstance) {
     //
     inst.text = inst.text.replace(RX_TEMPLTRIM,"$1");
 
-    // trim the templates - don't want extraneous whitespace
-    // around template values.
+    // trim the template values themselves - don't want 
+    // extraneous whitespace around template values.
     // 
     for(let item in inst.templates) {
         trimTemplateValues(inst.templates[item]);
+
+        inst.templates[item].volume = inst.templates[item].volume || 1.0;
+        inst.templates[item].notes  = inst.templates[item].notes  || "";
     }
+
+    inst.cueSet    = inst.cueSet    || "";
+    inst.segments  = [];
+
+    inst.timedSet  = inst.timedSet  || [];
+    inst.templates = inst.templates || {};
+    inst.trim      = inst.trim      || [];
+    inst.volume    = inst.volume    || 1.0;
+
 }
 
 function trimTemplateValues(templ:templVar) {
@@ -208,6 +256,35 @@ function postProcessScript(inst:scriptInstance, segID:number) {
     trimCuePoints(cueArray, inst);
 
     segmentScript(inst, segID++);
+
+    // Try to maintain user defined segment trims but 
+    // If the trim array is empty or doesn't match the 
+    // segment count we reset
+    // 
+    if(inst.trim.length != inst.segments.length) {
+
+        inst.trim = new Array<number>();
+
+        for(let i1 = 0 ; i1 < inst.segments.length ; i1++) {
+            inst.trim.push(0);
+        }
+    }
+
+    // We do a posthoc insertion of the trim values into the script 
+    // segments.
+    // 
+    else {
+        for(let i1 = 0 ; i1 < inst.segments.length ; i1++) {
+
+            let segVal = inst.segments[i1];
+
+            for(let segVar in segVal) {
+
+                if(segVar == TEMPLATEVAR) continue;
+                segVal[segVar].trim  = inst.trim[i1];
+            }
+        }
+    }
 }
 
 
@@ -253,12 +330,13 @@ function addSegment(inst:scriptInstance, templ:findArray, start:number, end:numb
 
         try {
             let templVals:templValue = inst.templates[templ[1]].values;
+            let templVol:number      = inst.templates[templ[1]].volume;
 
-            inst.segments.push(composeSegment(templ[1], templVals, start, end, segID));
+            inst.segments.push(composeSegment(templ[1], templVals, start, end, segID, templVol));
         }
         catch(error) {
 
-            console.log("Possible missing Template: " + error);
+            console.error("Possible missing Template: " + error);
         }
     }
     else {
@@ -266,12 +344,12 @@ function addSegment(inst:scriptInstance, templ:findArray, start:number, end:numb
         let segStr    = segID.toString();
         let scriptSeg = inst.text.substring(start, end);
 
-        inst.segments.push(composeSegment("__novar",{__novar:scriptSeg}, start, end, segID));
+        inst.segments.push(composeSegment("__novar",{__novar:scriptSeg}, start, end, segID, 1.0));
     }
 }
 
 
-function composeSegment(templVar:string, templVals:templValue, start:number, end:number,  segID:number) : segment {
+function composeSegment(templVar:string, templVals:templValue, start:number, end:number,  segID:number, segVol:number) : segment {
 
     let seg:segment     = {templateVar:templVar};
     let subSegID:number = ZERO_SEGID;
@@ -284,12 +362,15 @@ function composeSegment(templVar:string, templVals:templValue, start:number, end
 
         let segStr:string = segID.toString() + ((templValName !== "__novar")? charEncodeSegID(ASCII_a, subSegID++):"");
 
-        console.log(`Adding Segment: ${text} - id:${segStr}`);
+        // console.log(`Adding Segment: ${text} - id:${segStr}`);
 
         seg[templValName] = {
             id:segStr,
             SSML:text,
-            cues:cuePoints
+            cues:cuePoints,
+            duration:0,
+            trim:0,
+            volume:segVol
         }
     }
 
@@ -300,14 +381,16 @@ function composeSegment(templVar:string, templVals:templValue, start:number, end
 function composeCuePoints(templVar:string, start:number, end:number ) : Array<cuePoint> {
 
     let cues:Array<cuePoint> = [];
-    let length:number = end - start;
+    let length:number = end - start - 1;
 
     for(let cuePnt of cueArray) {
-        if(cuePnt.index >= start && cuePnt.index <= end) {
+        if(cuePnt.index >= start && cuePnt.index < end) {
 
-            let segCue:cuePoint = {};
-
-            segCue[cuePnt[0]] = ((cuePnt.index - start)/length);
+            let segCue:cuePoint = {
+                name   : cuePnt[0],
+                offset : ((cuePnt.index - start) / (length)),
+                relTime : 0
+            };
 
             cues.push(segCue);
         }
@@ -327,44 +410,6 @@ function charEncodeSegID(charBase:number, subindex:number) : string {
     result += String.fromCharCode(charBase + subindex % 26);
 
     return result;
-}
-
-
-function compileScript() {
-
-    let segID = ZERO_SEGID;
-
-    voices = JSON.parse(fs.readFileSync(voicesPath)); 
-    input  = JSON.parse(fs.readFileSync(scriptPath));
-    
-    rmdirSync(ASSETS_PATH, false);
-
-    let modName = RX_MODULENAME.exec(__dirname);
-
-    // console.log(process.env);
-    // console.log(__filename);
-    // console.log(__dirname);
-
-    for(let scene in input) {
-
-        for(let track in input[scene].tracks) {
-
-            preProcessScript(input[scene].tracks[track].en);
-        }        
-    }    
-    updateProcessedScripts(scriptPath);
-
-
-    for(let scene in input) {
-
-        for(let track in input[scene].tracks) {
-
-            postProcessScript(input[scene].tracks[track].en, segID);
-        }        
-    }    
-    updateProcessedScripts(assetPath);
-
-    synthesizeSegments(input, voices);
 }
 
 
@@ -406,7 +451,8 @@ function clone(obj:any):any {
 
 function synthesizeSegments(input:any, languages:any) {
 
-    let outPath = ASSETS_PATH;
+    let outPath  = ASSETS_PATH;
+    let promises = [];
 
     for(let scene in input) {
 
@@ -426,9 +472,10 @@ function synthesizeSegments(input:any, languages:any) {
 
                                     let _request:requestType = clone(languages[language][voice].request);
 
-                                    // \\ISP_TUTOR\\<moduleName>\\EFaudio\\EFassets\\<Lang>\\<sceneName>\\<<trackName>_s<segmentid>_v<voiceId>>.mp3
+                                    // \\ISP_TUTOR\\<moduleName>\\EFaudio\\EFassets\\<Lang>\\<sceneName>\\<<trackName>_s<segmentid>_v<voiceId>>[.mp3]
+
                                     let filePath = outPath + "\\"  + lang + "\\" + scene;
-                                    let fileName = "\\" + track + "_s" + seg[segVal].id + "_v" + voice + ".mp3";
+                                    let fileName = "\\" + track + "_s" + seg[segVal].id + "_v" + voice;
 
                                     validatePath(filePath, null);
 
@@ -436,7 +483,7 @@ function synthesizeSegments(input:any, languages:any) {
                                     
                                     filesRequested++;
 
-                                    synthesizeVOICE(_request, filePath+fileName);
+                                    promises.push(synthesizeVOICE(_request, filePath+fileName, seg[segVal]));
                                 }
                             }
                         }
@@ -445,36 +492,43 @@ function synthesizeSegments(input:any, languages:any) {
             }        
         }        
     }    
+
+    return promises;
 }
 
 
-function synthesizeVOICE(request:requestType, outputFile:string) {
+function synthesizeVOICE(request:requestType, outputFile:string, seg:segmentVal)  {
 
     const textToSpeech = require('@google-cloud/text-to-speech');
     const fs = require('fs');
   
     const client:any = new textToSpeech.TextToSpeechClient();  
     
-    console.log(`Audio content  : ${request.input.ssml}`);
-    console.log(`Written to file: ${outputFile}`);
+    console.log(`Processing Script  : ${request.input.ssml} to file: ${outputFile}`);
 
-    client.synthesizeSpeech(request, (err:any, response:any) => {
-        if (err) {
-          console.error('ERROR:', err);
-          return;
-        }
+    let promise = client.synthesizeSpeech(request).then((response:any) => {
     
         filesProcessed++;
-        fs.writeFile(outputFile, response.audioContent, 'binary', (err:string) => {
+
+        convert(outputFile+TYPE_MP3, response[0].audioContent, seg);
+
+        // console.log(`Audio content  : ${request.input.ssml}`);
+        // console.log(`Audio content written to file: ${outputFile}`);
+        console.log(`Files Requested: ${filesRequested} -- Files Processed: ${filesProcessed}`);          
+
+        fs.writeFileSync(outputFile+TYPE_WAV, response[0].audioContent, 'binary', (err:string) => {
           if (err) {
             console.error('ERROR:', err);
             return;
           }
-          console.log(`Audio content  : ${request.input.ssml}`);
-          console.log(`Audio content written to file: ${outputFile}`);
-          console.log(`Files Requested: ${filesRequested} -- Files Processed: ${filesProcessed}`);          
         });
-    });              
+
+    }).catch((err:any) => {
+        console.error('ERROR:', err);
+        return;
+      });
+
+    return promise;
 }
  
 

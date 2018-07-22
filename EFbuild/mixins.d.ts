@@ -1,4 +1,4 @@
-declare namespace EFTut_Suppl.EFMod_CodeTest {
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
     class CONST {
         static readonly TUTORCONTAINER: string;
         static readonly NEXTSCENE: string;
@@ -11,68 +11,93 @@ declare namespace EFTut_Suppl.EFMod_CodeTest {
         static readonly CLICK: string;
     }
 }
-declare namespace EFTut_Suppl.EFMod_CodeTest {
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
     class $Common {
         [key: string]: any;
-        $oncreate(): void;
-        $onenter(): void;
-        $preenter(): void;
-        $preexit(): void;
-        $demoinit(): void;
-        $logging(): void;
-        $rewind(): void;
+        $onCreateScene(): void;
+        $preEnterScene(): void;
+        $onEnterScene(): void;
+        $preExitScene(): void;
+        $onExitScene(): void;
+        $demoInitScene(): void;
+        $logScene(): void;
+        $rewindScene(): void;
+        $resolveTemplate(templID: string): void;
         $nodePreEnter(nodeId: string): void;
         $nodePreExit(nodeId: string): void;
         $nodeAction(actionId: string): void;
         $nodeConstraint(constrainId: string): boolean;
-        $cuePoints(script: string, id: string): void;
-        $timedEvents(script: string, id: string): void;
+        $cuePoints(id: string): void;
+        $timedEvents(id: string): void;
     }
 }
-declare namespace EFTut_Suppl.EFMod_CodeTest {
-    class Scene1 {
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class SNavigator {
         [key: string]: any;
-        $oncreate(): void;
-        $onenter(): void;
-        $preenter(): void;
-        $preexit(): void;
-        $demoinit(): void;
-        $logging(): void;
-        $rewind(): void;
+        $onCreateScene(): void;
+        $onEnterScene(): void;
+        $preEnterScene(): void;
+        $preExitScene(): void;
+        $demoInitScene(): void;
+        $logScene(): void;
+        $rewindScene(): void;
+        $resolveTemplate(templID: string): any;
         $nodePreEnter(nodeId: string): void;
         $nodePreExit(nodeId: string): void;
         $nodeAction(actionId: string): void;
         $nodeConstraint(constrainId: string): boolean;
-        $cuePoints(script: string, id: string): void;
-        $timedEvents(script: string, id: string): void;
+        $cuePoints(trackID: string, cueID: string): void;
+        $timedEvents(id: string): void;
     }
-    class Scene2 {
+}
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class SScene1 {
+        $var1: string;
         [key: string]: any;
-        $oncreate(): void;
-        $preenter(): void;
-        $preexit(): void;
-        $demoinit(): void;
-        $logging(): void;
-        $rewind(): void;
+        $onCreateScene(): void;
+        $onEnterScene(): void;
+        $preEnterScene(): void;
+        $preExitScene(): void;
+        $demoInitScene(): void;
+        $logScene(): void;
+        $rewindScene(): void;
+        $resolveTemplate(templID: string): any;
+        $nodePreEnter(nodeId: string): void;
+        $nodePreExit(nodeId: string): void;
+        $nodeAction(actionId: string): void;
+        $nodeConstraint(constrainId: string): boolean;
+        $cuePoints(trackID: string, cueID: string): void;
+        $timedEvents(id: string): void;
     }
-    class Scene3 {
+}
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class SScene2 {
         [key: string]: any;
-        $oncreate(): void;
-        $preenter(): void;
-        $preexit(): void;
+        $onCreateScene(): void;
+        $preEnterScene(): void;
+    }
+}
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class SScene3 {
+        [key: string]: any;
+        $onCreateScene(): void;
+        $preEnterScene(): void;
+        $preExitScene(): void;
         $onexit(): void;
-        $demoinit(): void;
-        $logging(): void;
-        $rewind(): void;
+        $demoInitScene(): void;
+        $logScene(): void;
+        $rewindScene(): void;
     }
-    class Scene4 {
+}
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class SScene4 {
         [key: string]: any;
-        $oncreate(): void;
-        $onenter(): void;
-        $preenter(): void;
-        $preexit(): void;
-        $demoinit(): void;
-        $logging(): void;
-        $rewind(): void;
+        $onCreateScene(): void;
+        $onEnterScene(): void;
+        $preEnterScene(): void;
+        $preExitScene(): void;
+        $demoInitScene(): void;
+        $logScene(): void;
+        $rewindScene(): void;
     }
 }

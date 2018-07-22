@@ -6,7 +6,7 @@
                             "voice": {"name":"en-US-Wavenet-D",
                                     "languageCode": "en-US", 
                                     "ssmlGender": "MALE"},
-                            "audioConfig": {"audioEncoding": "MP3"}
+                            "audioConfig": {"audioEncoding": "LINEAR16"}
                     },
                     "parms":{"rate":1, "pitch":0 }
             },
@@ -17,7 +17,7 @@
                             "voice": {"name":"en-US-Wavenet-F",
                                     "languageCode": "en-US", 
                                     "ssmlGender": "FEMALE"},
-                            "audioConfig": {"audioEncoding": "MP3"}
+                            "audioConfig": {"audioEncoding": "LINEAR16"}
                     },
                     "parms":{"rate":1, "pitch":0 }
             }

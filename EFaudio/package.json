@@ -10,7 +10,8 @@
   },
   "scripts": {},
   "dependencies": {
-    "@google-cloud/text-to-speech": "^0.1.0"
+    "@google-cloud/text-to-speech": "^0.1.0",
+    "lamejs": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^10.1.2",

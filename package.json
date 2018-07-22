@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "systemjs": "^0.21.2"
+    "systemjs": "^0.21.2",
+    "typescript": "^2.9.2"
   }
 }

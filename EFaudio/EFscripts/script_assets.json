@@ -1,0 +1,146 @@
+{
+	"SScene1": {
+		"tracks": {
+			"track1": {
+				"en": {
+					"html": "<p>There   are{{var1}}  <span id='item1'>speech</span> parameters which can be manipulated   when  using  SSML.</p>",
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "multiple",
+								"valname2": "several",
+								"valname3": "some"
+							},
+							"volume": 0.8,
+							"notes": ""
+						}
+					},
+					"text": "There are{{var1}}speech parameters which can be manipulated when using SSML.",
+					"cueSet": "a................b.....................................................z",
+					"segments": [
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "0",
+								"SSML": "There are",
+								"cues": [
+									{
+										"name": "a",
+										"offset": 0,
+										"relTime": 0
+									}
+								],
+								"duration": 640.2916666666666,
+								"trim": 70,
+								"volume": 1
+							}
+						},
+						{
+							"templateVar": "var1",
+							"valname1": {
+								"id": "1a",
+								"SSML": "multiple",
+								"cues": [],
+								"duration": 659.125,
+								"trim": 0,
+								"volume": 0.8
+							},
+							"valname2": {
+								"id": "1b",
+								"SSML": "several",
+								"cues": [],
+								"duration": 649.625,
+								"trim": 0,
+								"volume": 0.8
+							},
+							"valname3": {
+								"id": "1c",
+								"SSML": "some",
+								"cues": [],
+								"duration": 566.9166666666666,
+								"trim": 0,
+								"volume": 0.8
+							}
+						},
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "2",
+								"SSML": "speech parameters which can be manipulated when using SSML.",
+								"cues": [
+									{
+										"name": "b",
+										"offset": 0,
+										"relTime": 0
+									},
+									{
+										"name": "z",
+										"offset": 0.9310344827586207,
+										"relTime": 3646.900862068965
+									}
+								],
+								"duration": 3917.0416666666665,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						70,
+						0,
+						0
+					],
+					"volume": 1
+				}
+			},
+			"track2": {
+				"en": {
+					"html": "$$EFL.htmltext.textitem1",
+					"templates": {
+						"var1": {
+							"values": {
+								"valname1": "value1",
+								"valname2": "value2",
+								"valname3": "value3"
+							},
+							"volume": 0.8,
+							"notes": ""
+						}
+					},
+					"text": "This is a test to see how the audio sounds.",
+					"cueSet": "a................b.....................................................z",
+					"segments": [
+						{
+							"templateVar": "__novar",
+							"__novar": {
+								"id": "0",
+								"SSML": "This is a test to see how the audio sounds.",
+								"cues": [
+									{
+										"name": "a",
+										"offset": 0,
+										"relTime": 0
+									},
+									{
+										"name": "b",
+										"offset": 0.40476190476190477,
+										"relTime": 1029.984126984127
+									}
+								],
+								"duration": 2544.6666666666665,
+								"trim": 0,
+								"volume": 1
+							}
+						}
+					],
+					"timedSet": [],
+					"trim": [
+						0
+					],
+					"volume": 1
+				}
+			}
+		}
+	}
+}
