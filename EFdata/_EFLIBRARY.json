@@ -1,0 +1,35 @@
+{
+	"_LIBRARY": {
+		"htmltext": {
+			"textitem1": {
+				"src": "$$EFX.textarea1",
+				"html": "\n        <p>This div element has position: absolute;\n            </p><div class=\"spanclass\">\n              <ol>\n                  <li><span style=\"color:blue; font-weight: bold; font-size: 16px\">This is a test</span> this is the problem</li>\n                  <li>Pitta salad</li>\n                  <li>Green salad</li>\n                  <li>Halloumi</li>\n              </ol>\n          </div>\n        We make the text super long so we can see how the layout works<br><br>Then we see if line breaks make a difference<p></p>      \n    ",
+				"templates": {
+					"var1": {
+						"values": {
+							"valname1": "value1",
+							"valname2": "value2",
+							"valname3": "value3"
+						},
+						"volume": 0.8,
+						"notes": ""
+					}
+				},
+				"style": {
+					".absolute": {
+						"height": "400px",
+						"width": "400px",
+						"left": "100px",
+						"top": "100px"
+					}
+				}
+			}
+		},
+		"textinput": {
+			"Input1A": {
+				"xname": "SInput1",
+				"startText": "Enter your answer here."
+			}
+		}
+	}
+}

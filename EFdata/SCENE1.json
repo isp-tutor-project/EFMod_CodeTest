@@ -1,0 +1,14 @@
+{
+    "TUTORDATA":"v1.0.0",
+    "SScene1": {
+        "SInput": {
+            "$$REF":"$$EFL.textinput.Input1A"
+        },
+        "SShape1": {
+            "xname":"SShape1"            
+        },
+        "SShape2": {
+            "xname":"SShape2"            
+        }
+    }
+}
