@@ -71,7 +71,7 @@ p {
 <p>This div element has position: absolute;
     <div class="spanclass">
       <ol>
-          <li>Humous or <span style="color:blue; font-weight: bold; font-size: 16px">This is a test</span> this is the problem</li>
+          <li>Humous or <span style="color:blue; font-weight: bold; font-size: 16px">{{This is a test}}</span> this is the problem</li>
           <li>Pitta salad</li>
           <li>Green salad</li>
           <li>Halloumi</li>

@@ -3,7 +3,7 @@
 		"tracks": {
 			"track1": {
 				"en": {
-					"html": "<p>There   are{{var1}}  <span id='item1'>speech</span> parameters which can be manipulated   when  using  SSML.</p>",
+					"html": "<p>There   are{{var1}}  <span id='item1' day='test'></span> parameters which can be manipulated   when  using  SSML.</p>",
 					"templates": {
 						"var1": {
 							"values": {
@@ -15,7 +15,7 @@
 							"notes": ""
 						}
 					},
-					"text": "There are{{var1}}speech parameters which can be manipulated when using SSML.",
+					"text": "There are{{var1}}parameters which can be manipulated when using SSML.",
 					"cueSet": "a................b.....................................................z",
 					"segments": [
 						{
@@ -30,7 +30,7 @@
 										"relTime": 0
 									}
 								],
-								"duration": 640.2916666666666,
+								"duration": 541.5,
 								"trim": 70,
 								"volume": 1
 							}
@@ -49,7 +49,7 @@
 								"id": "1b",
 								"SSML": "several",
 								"cues": [],
-								"duration": 649.625,
+								"duration": 593.2083333333334,
 								"trim": 0,
 								"volume": 0.8
 							},
@@ -57,7 +57,7 @@
 								"id": "1c",
 								"SSML": "some",
 								"cues": [],
-								"duration": 566.9166666666666,
+								"duration": 475.25,
 								"trim": 0,
 								"volume": 0.8
 							}
@@ -66,20 +66,15 @@
 							"templateVar": "__novar",
 							"__novar": {
 								"id": "2",
-								"SSML": "speech parameters which can be manipulated when using SSML.",
+								"SSML": "parameters which can be manipulated when using SSML.",
 								"cues": [
 									{
 										"name": "b",
 										"offset": 0,
 										"relTime": 0
-									},
-									{
-										"name": "z",
-										"offset": 0.9310344827586207,
-										"relTime": 3646.900862068965
 									}
 								],
-								"duration": 3917.0416666666665,
+								"duration": 3479.125,
 								"trim": 0,
 								"volume": 1
 							}

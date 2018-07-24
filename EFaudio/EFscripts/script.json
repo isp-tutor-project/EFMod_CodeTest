@@ -3,7 +3,7 @@
 		"tracks": {
 			"track1": {
 				"en": {
-					"html": "<p>There   are{{var1}}  <span id='item1'>speech</span> parameters which can be manipulated   when  using  SSML.</p>",
+					"html": "<p>There   are{{var1}}  <span id='item1' day='test'></span> parameters which can be manipulated   when  using  SSML.</p>",
 					"templates": {
 						"var1": {
 							"values": {
@@ -15,7 +15,7 @@
 							"notes": ""
 						}
 					},
-					"text": "There are{{var1}}speech parameters which can be manipulated when using SSML.",
+					"text": "There are{{var1}}parameters which can be manipulated when using SSML.",
 					"cueSet": "a................b.....................................................z",
 					"segments": [],
 					"timedSet": [],
