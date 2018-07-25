@@ -684,12 +684,12 @@ declare module "sceneExt/TIntroPart3" {
         corSel6: boolean;
         constructor();
         initHouse(): void;
-        private onCheck1(evt);
-        private onCheck2(evt);
-        private onCheck3(evt);
-        private onCheck4(evt);
-        private onCheck5(evt);
-        private onCheck6(evt);
+        private onCheck1;
+        private onCheck2;
+        private onCheck3;
+        private onCheck4;
+        private onCheck5;
+        private onCheck6;
         queryFinished(): void;
         captureLogState(obj?: any): Object;
         captureXMLState(): any;

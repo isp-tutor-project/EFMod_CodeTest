@@ -30,7 +30,7 @@
 										"relTime": 0
 									}
 								],
-								"duration": 541.5,
+								"duration": 613.9583333333334,
 								"trim": 70,
 								"volume": 1
 							}
@@ -41,7 +41,7 @@
 								"id": "1a",
 								"SSML": "multiple",
 								"cues": [],
-								"duration": 659.125,
+								"duration": 650.9583333333334,
 								"trim": 0,
 								"volume": 0.8
 							},
@@ -57,7 +57,7 @@
 								"id": "1c",
 								"SSML": "some",
 								"cues": [],
-								"duration": 475.25,
+								"duration": 554.9583333333334,
 								"trim": 0,
 								"volume": 0.8
 							}
@@ -103,14 +103,14 @@
 							"notes": ""
 						}
 					},
-					"text": "This is a test to see how the audio sounds.",
+					"text": " This div element has position: absolute; This is a test this is the problem Pitta salad Green salad Halloumi We make the text super long so we can see how the layout worksThen we see if line breaks make a difference ",
 					"cueSet": "a................b.....................................................z",
 					"segments": [
 						{
 							"templateVar": "__novar",
 							"__novar": {
 								"id": "0",
-								"SSML": "This is a test to see how the audio sounds.",
+								"SSML": " This div element has position: absolute; This is a test this is the problem Pitta salad Green salad Halloumi We make the text super long so we can see how the layout worksThen we see if line breaks make a difference ",
 								"cues": [
 									{
 										"name": "a",
@@ -119,11 +119,16 @@
 									},
 									{
 										"name": "b",
-										"offset": 0.40476190476190477,
-										"relTime": 1029.984126984127
+										"offset": 0.0787037037037037,
+										"relTime": 956.2827932098766
+									},
+									{
+										"name": "z",
+										"offset": 0.3287037037037037,
+										"relTime": 3993.886959876543
 									}
 								],
-								"duration": 2544.6666666666665,
+								"duration": 12150.416666666666,
 								"trim": 0,
 								"volume": 1
 							}
