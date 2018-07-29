@@ -1,8 +1,11 @@
 {
 	"TUTORDATA": "v1.0.0",
 	"SScene1": {
-		"SInput": {
-			"$$REF": "$$EFL.textinput.Input1A"
+		"SInput1": {
+			"$$REF": "$$EFL.textinput.SInput1"
+		},
+		"STextBox1": {
+			"$$REF": "$$EFL.htmltext.STextBox1"
 		},
 		"SShape1": {
 			"xname": "SShape1"
@@ -12,8 +15,11 @@
 		}
 	},
 	"SScene2": {
-		"SInput": {
-			"xname": "SInput1"
+		"SInput1": {
+			"$$REF": "$$EFL.textinput.SInput1"
+		},
+		"STextBox1": {
+			"$$REF": "$$EFL.htmltext.STextBox1"
 		},
 		"SShape1": {
 			"xname": "SShape1"

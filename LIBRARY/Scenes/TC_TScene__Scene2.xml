@@ -1,11 +1,27 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene2" itemID="5b42585f-00000352" lastModified="1532020860">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene2" itemID="5b42585f-00000352" lastModified="1532734174">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
   <timeline>
     <DOMTimeline name="TC_TScene__Scene2">
       <layers>
-        <DOMLayer name="SShape1" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="STextBox1" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlText__Type1" name="STextBox1" selected="true">
+                  <matrix>
+                    <Matrix a="2.109619140625" b="-1.21794128417969" c="0.9134521484375" d="1.58221435546875" tx="106.9" ty="631.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="50.05"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="SShape1" color="#FF800A" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -17,7 +33,7 @@
                     <Point x="100.2" y="214.3"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="CustomControls/TC_TTextInput__CTextControl" name="SInput" selected="true">
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Type1" name="SInput1">
                   <matrix>
                     <Matrix a="1.43562316894531" b="0.887603759765625" c="-0.887603759765625" d="1.43562316894531" tx="731.7" ty="-98.85"/>
                   </matrix>

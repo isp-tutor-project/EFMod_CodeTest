@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene1" itemID="5b411266-0000033c" lastModified="1532020844">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene1" itemID="5b411266-0000033c" lastModified="1532734140">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
@@ -37,11 +37,27 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="SInput" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="STextBox1" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="CustomControls/TC_TTextInput__CTextControl" name="SInput" selected="true">
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlText__Type1" name="STextBox1">
+                  <matrix>
+                    <Matrix a="4" d="3" tx="654" ty="173.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="50"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="SInput1" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Type1" name="SInput1">
                   <matrix>
                     <Matrix tx="597.7" ty="839.05"/>
                   </matrix>

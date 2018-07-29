@@ -1,9 +1,10 @@
 {
 	"_LIBRARY": {
 		"htmltext": {
-			"textitem1": {
-				"src": "$$EFX.textarea1",
-				"html": "\n        <p>This div element has position: absolute;\n            </p><div class=\"spanclass\">\n              <ol>\n                  <li><span style=\"color:blue; font-weight: bold; font-size: 16px\">This is a test</span> this is the problem</li>\n                  <li>Pitta salad</li>\n                  <li>Green salad</li>\n                  <li>Halloumi</li>\n              </ol>\n          </div>\n        We make the text super long so we can see how the layout works<br><br>Then we see if line breaks make a difference<p></p>      \n    ",
+			"STextBox1": {
+				"src": "$$EFX.STextBox1",
+				"html": "\n            <p>This div element has position: absolute;\n                </p><ol class=\"spanclass\">\n                    <li><span style=\"color:blue; font-weight: bold;\">This is a test</span> this is the problem</li>\n                    <li>Pitta salad</li>\n                    <li>Green salad</li>\n                    <li>Halloumi</li>\n                </ol>\n            We make the text super long so we can see how the layout works<br><br>Then we see if line breaks make a difference<p></p>      \n        ",
+				"xname": "STextBox1",
 				"templates": {
 					"var1": {
 						"values": {
@@ -16,19 +17,53 @@
 					}
 				},
 				"style": {
-					".absolute": {
-						"height": "400px",
+					"[stextbox1].outerContainer": {
+						"text-align": "center",
+						"user-select": "none",
+						"box-shadow": "6px 6px 4px 4px #3a2c2c66",
+						"background": "rgb(255, 255, 255)",
+						"border": ".20em solid #000000",
+						"font-size": "12px",
+						"border-radius": "10px",
+						"padding-right": "3em",
+						"padding-left": "3em",
+						"height": "300px",
 						"width": "400px",
-						"left": "100px",
-						"top": "100px"
+						"left": "0px",
+						"top": "0px"
+					},
+					"[stextbox1] .tablecell": {
+						"vertical-align": "middle"
+					},
+					"[stextbox1] .spanclass": {
+						"padding-left": "5em",
+						"text-align": "left"
+					},
+					"[stextbox1] ::selection": {
+						"background": "rgb(17, 0, 255)",
+						"color": "red"
 					}
 				}
 			}
 		},
 		"textinput": {
-			"Input1A": {
+			"SInput1": {
+				"src": "$$EFX.SInput1",
 				"xname": "SInput1",
-				"startText": "Enter your answer here."
+				"style": {
+					"[sinput1].outerContainer": {
+						"font-Weight": "normal",
+						"font-Style": "normal",
+						"font-Size": "10px",
+						"font-Family": "verdana",
+						"height": "20px",
+						"width": "103px",
+						"top": "0px",
+						"left": "0px",
+						"border": "1px solid #CCC"
+					}
+				},
+				"html": "\n\n        <textarea class=\"input\" placeholder=\"temp text\"></textarea>\n\n    "
 			}
 		}
 	}

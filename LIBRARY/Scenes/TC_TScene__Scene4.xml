@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene4" itemID="5b42586a-0000035a" lastModified="1531074757">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene4" itemID="5b42586a-0000035a" lastModified="1532620200">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
@@ -22,6 +22,14 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMDynamicText>
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Type1" name="SInput" selected="true">
+                  <matrix>
+                    <Matrix tx="375.75" ty="371.1"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="382.95" y="37"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>

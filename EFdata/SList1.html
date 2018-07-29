@@ -1,0 +1,84 @@
+       
+    <!- EDFORGE EXTERNAL ->
+
+    <style id="internalStyle">
+
+            [efinput].outerContainer {
+                position:absolute;
+                box-sizing:border-box;            
+    
+                resize:none;
+                border:1px solid #CCC;
+              
+                left:0px; 
+                top:0px;
+                width:303px;
+                height:20px;
+
+                pointer-events:all;
+        
+                font-Family:verdana;  
+                font-Size:10px;
+                font-Style:normal;
+                font-Weight:normal;  
+                
+                padding:0;
+                margin:0px;
+
+                visibility:visible
+            }
+    
+            [efinput] .input {
+                box-sizing:border-box;              
+    
+                resize:inherit;
+                border:inherit;
+              
+                left:inherit; 
+                top:inherit;
+                width:inherit;
+                height:inherit;
+    
+                pointer-events:all;
+        
+                font-Family:verdana;  
+                font-Size:inherit;
+                font-Style:normal;
+                font-Weight:normal;                  
+            }
+
+            [efinput] .input::placeholder {
+                color:rgb(233, 232, 232);
+                font-style:italic;            
+            }
+
+            [efinput] textarea:focus {
+                outline: none;
+                border: 2px solid #0CC;
+            }​
+    </style>
+
+    <style id="customStyle">
+
+            [efcontrolname].outerContainer {
+
+                border:1px solid #CCC;
+              
+                left:0px; 
+                top:0px;
+                width:e03px;
+                height:20px;
+
+                font-Family:verdana;  
+                font-Size:10px;
+                font-Style:normal;
+                font-Weight:normal;  
+            }
+
+    </style>
+
+    <div class="outerContainer" id="controlContainer" efinput efcontrolname>
+
+        <textarea class="input" placeholder="temp text"></textarea>
+
+    </div>

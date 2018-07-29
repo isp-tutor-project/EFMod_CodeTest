@@ -49,7 +49,7 @@
 								"id": "1b",
 								"SSML": "several",
 								"cues": [],
-								"duration": 593.2083333333334,
+								"duration": 629.7916666666666,
 								"trim": 0,
 								"volume": 0.8
 							},
@@ -91,7 +91,7 @@
 			},
 			"track2": {
 				"en": {
-					"html": "$$EFL.htmltext.textitem1",
+					"html": "$$EFL.htmltext.STextBox1",
 					"templates": {
 						"var1": {
 							"values": {

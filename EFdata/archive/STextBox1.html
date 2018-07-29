@@ -1,0 +1,79 @@
+       
+    <!- EDFORGE EXTERNAL ->
+
+    <style id="internalStyle">
+
+        [eftext].outerContainer {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        [eftext] .tablecell {
+            display: table-cell;
+            box-sizing: border-box;
+            height: inherit;
+            width: inherit;
+        }
+
+        [eftext] p {
+            margin: 0px;
+        }
+
+    </style>
+
+    <style id="customStyle">
+
+        [efcontrolname].outerContainer {
+
+            top: 100px;
+            left: 100px;
+            width: 400px;
+            height: 300px;
+
+            padding-left: 20px;
+            padding-right: 20px;
+
+            border-radius: 10px;
+
+            font-size: 12px;
+
+            border: 3px solid #000000;
+            /* color: #00000044; */
+
+            background: rgb(255, 255, 255);
+            box-shadow: 6px 6px 4px 4px #3a2c2c66;
+
+            user-select:none;
+            text-align: center;
+        }
+
+        [efcontrolname] .tablecell {
+            vertical-align: middle;
+        }
+
+        [efcontrolname] .spanclass {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        [efcontrolname] ::selection {
+            color: red; 
+            background: rgb(17, 0, 255);
+        }
+
+    </style>
+    
+    <div class="outerContainer" eftext efcontrolname>
+        <div class="tablecell" id="controlContainer">
+            <p>This div element has position: absolute;
+                <div class="spanclass">
+                    <ol>
+                        <li><span style="color:blue; font-weight: bold;">This is a test</span> this is the problem</li>
+                        <li>Pitta salad</li>
+                        <li>Green salad</li>
+                        <li>Halloumi</li>
+                    </ol>
+                </div>
+            We make the text super long so we can see how the layout works<br><br>Then we see if line breaks make a difference</p>      
+        </div>
+    </div>

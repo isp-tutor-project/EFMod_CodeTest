@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CustomControls/TC_THtmlList__Type1" itemID="5b5ceaa7-000003b4" lastModified="1532816039">
+  <timeline>
+    <DOMTimeline name="TC_THtmlList__Type1">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlList__Assets/listbox" selected="true">
+                  <transformationPoint>
+                    <Point x="239.95" y="33.95"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

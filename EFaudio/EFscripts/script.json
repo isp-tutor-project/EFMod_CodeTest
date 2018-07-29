@@ -29,7 +29,7 @@
 			},
 			"track2": {
 				"en": {
-					"html": "$$EFL.htmltext.textitem1",
+					"html": "$$EFL.htmltext.STextBox1",
 					"templates": {
 						"var1": {
 							"values": {
