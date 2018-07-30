@@ -47,6 +47,18 @@ var EFTut_Suppl;
 (function (EFTut_Suppl) {
     var EFMOD_CODETEST;
     (function (EFMOD_CODETEST) {
+        class Globals {
+            constructor() {
+                this.$var1 = "valname2";
+            }
+        }
+        EFMOD_CODETEST.Globals = Globals;
+    })(EFMOD_CODETEST = EFTut_Suppl.EFMOD_CODETEST || (EFTut_Suppl.EFMOD_CODETEST = {}));
+})(EFTut_Suppl || (EFTut_Suppl = {}));
+var EFTut_Suppl;
+(function (EFTut_Suppl) {
+    var EFMOD_CODETEST;
+    (function (EFMOD_CODETEST) {
         class SNavigator {
             $onCreateScene() {
                 console.log("$Navigator created");

@@ -1,0 +1,82 @@
+<!- EDFORGE EXTERNAL ->
+
+<style id="internalStyle">
+
+    [eftable].outerContainer {
+        position:absolute;
+        box-sizing:border-box;            
+    
+        border: 3px solid black;
+        border-radius: 6px;
+        border-spacing: 0px;
+        table-layout: auto;
+        width: 500px;
+        height: 300px;
+        user-select: none;
+        background-color: azure;
+        box-shadow: 6px 6px 4px 4px #3a2c2c66;
+    }
+
+    [eftable] th,
+    [eftable] td {
+        display: table-cell;
+        padding: 10px;
+        border-right: 2px solid rgba(128, 128, 128, 0.486);
+        border-bottom: 2px solid rgba(128, 128, 128, 0.486);
+        text-align: center;
+    }
+
+    [eftable] th:last-child,
+    [eftable] td:last-child {
+        border-right: none;
+    }
+
+    [eftable] tr:last-child td {
+        border-bottom: none;
+    }
+</style>
+
+<style id="customStyle">
+
+    [efcontrolname] .listbox {
+        border-radius: 10px;
+    }
+
+    [efcontrolname] .test {
+        width: 100px;
+        height: 30px;
+        margin: 0 auto;
+        border-radius: 5px;
+        background-color: rgba(188, 228, 228, 0.329)
+    }
+
+</style>
+
+
+<table eftable efcontrolname class="outerContainer" id="controlContainer">
+    <tbody>
+        <tr>
+            <td>
+                <select>
+                    <option>test of the emergency broact</option>
+                </select>
+            </td>
+            <td>
+                <eftable/>
+            </td>
+            <td>
+                <div class="test"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>line 2 cell1 </td>
+            <td>line 2 cell2 </td>
+            <td style="background-color:green; color:blue">line 2 cell3 </td>
+        </tr>
+        <tr>
+            <td>line 2 cell1 </td>
+            <td>line 2 cell2 </td>
+            <td>line 2 cell3 </td>
+        </tr>
+    </tbody>
+</table>

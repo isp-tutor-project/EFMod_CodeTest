@@ -2,10 +2,10 @@
     "TUTORDATA":"v1.0.0",
     "SScene2": {
         "SInput1": {
-            "$$REF":"$$EFL.textinput.SInput1"
+            "$$REF":"$$EFL.efinput.SInput1"
         },
         "STextBox1": {
-            "$$REF":"$$EFL.htmltext.STextBox1"           
+            "$$REF":"$$EFL.eftext.STextBox1"           
         },
          "SShape1": {
             "xname":"SShape1"            

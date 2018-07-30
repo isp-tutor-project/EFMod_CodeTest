@@ -1,0 +1,21 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CustomControls/TC_THtmlTable__Table1" itemID="5b5f91bf-00000347" lastModified="1532989887">
+  <timeline>
+    <DOMTimeline name="TC_THtmlTable__Table1">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlTable__Assets/tablearea" selected="true">
+                  <transformationPoint>
+                    <Point x="200" y="200"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

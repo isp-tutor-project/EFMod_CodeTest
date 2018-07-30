@@ -32,6 +32,12 @@ declare namespace EFTut_Suppl.EFMOD_CODETEST {
     }
 }
 declare namespace EFTut_Suppl.EFMOD_CODETEST {
+    class Globals {
+        $var1: string;
+        [key: string]: any;
+    }
+}
+declare namespace EFTut_Suppl.EFMOD_CODETEST {
     class SNavigator {
         [key: string]: any;
         $onCreateScene(): void;

@@ -6,6 +6,7 @@
           <DOMFolderItem name="CustomControls" itemID="5b4fb182-000002f2" isExpanded="true"/>
           <DOMFolderItem name="CustomControls/TC_THtmlInput__Assets" itemID="5b5cd7d8-000002da"/>
           <DOMFolderItem name="CustomControls/TC_THtmlList__Assets" itemID="5b5cea4b-000003ab"/>
+          <DOMFolderItem name="CustomControls/TC_THtmlTable__Assets" itemID="5b5f40d8-000002e3"/>
           <DOMFolderItem name="CustomControls/TC_THtmlText__Assets" itemID="5b5cd7c7-000002d7"/>
           <DOMFolderItem name="Scenes" itemID="5b40f2ba-000002e0" isExpanded="true"/>
      </folders>
@@ -17,14 +18,17 @@
           <Include href="_Tutor Global Assets_/TutorModule.xml" loadImmediate="false" itemID="5ad39eb8-000002c4" lastModified="1523818168"/>
           <Include href="Assets/TC_TButton__NavButton.xml" itemIcon="0" loadImmediate="false" itemID="5b40ff12-00000306" lastModified="1531070796"/>
           <Include href="CustomControls/TC_THtmlInput__Assets/textFocusBox.xml" loadImmediate="false" itemID="481cb4d7-0000254a" lastModified="1528220890"/>
-          <Include href="CustomControls/TC_THtmlInput__Type1.xml" loadImmediate="false" itemID="5b5cd7dc-000002dc" lastModified="1532814103"/>
+          <Include href="CustomControls/TC_THtmlInput__Input1.xml" loadImmediate="false" itemID="5b5f91ac-00000345" lastModified="1532989868"/>
           <Include href="CustomControls/TC_THtmlList__Assets/listbox.xml" loadImmediate="false" itemID="5b5cea34-000003a3" lastModified="1532815924"/>
-          <Include href="CustomControls/TC_THtmlList__Type1.xml" loadImmediate="false" itemID="5b5ceaa7-000003b4" lastModified="1532816039"/>
+          <Include href="CustomControls/TC_THtmlList__List1.xml" loadImmediate="false" itemID="5b5f91b5-00000346" lastModified="1532989877"/>
+          <Include href="CustomControls/TC_THtmlTable__Assets/tablearea.xml" loadImmediate="false" itemID="5b5f40c1-000002dc" lastModified="1532969153"/>
+          <Include href="CustomControls/TC_THtmlTable__Table1.xml" loadImmediate="false" itemID="5b5f91bf-00000347" lastModified="1532989887"/>
           <Include href="CustomControls/TC_THtmlText__Assets/TextArea.xml" loadImmediate="false" itemID="5b59ef22-00000313" lastModified="1532620578"/>
-          <Include href="CustomControls/TC_THtmlText__Type1.xml" loadImmediate="false" itemID="5b5cd7cf-000002d9" lastModified="1532813424"/>
+          <Include href="CustomControls/TC_THtmlText__Text1.xml" loadImmediate="false" itemID="5b5f91c5-00000348" lastModified="1532989893"/>
           <Include href="CustomControls/TC_TObject__BlueOval.xml" loadImmediate="false" itemID="5b50c6ff-0000031f" lastModified="1532020479"/>
+          <Include href="CustomControls/TL_CodeTest_THtmlInput__Input1.xml" loadImmediate="false" itemID="5b5f91d4-00000349" lastModified="1532989908"/>
           <Include href="Scenes/TC_TScene__Navigator.xml" loadImmediate="false" itemID="5b411263-0000033b" lastModified="1532813577"/>
-          <Include href="Scenes/TC_TScene__Scene1.xml" loadImmediate="false" itemID="5b411266-0000033c" lastModified="1532734140"/>
+          <Include href="Scenes/TC_TScene__Scene1.xml" loadImmediate="false" itemID="5b411266-0000033c" lastModified="1532989945"/>
           <Include href="Scenes/TC_TScene__Scene2.xml" loadImmediate="false" itemID="5b42585f-00000352" lastModified="1532734174"/>
           <Include href="Scenes/TC_TScene__Scene3.xml" loadImmediate="false" itemID="5b425864-00000356" lastModified="1531074741"/>
           <Include href="Scenes/TC_TScene__Scene4.xml" loadImmediate="false" itemID="5b42586a-0000035a" lastModified="1532620200"/>
@@ -42,7 +46,7 @@
                               </DOMFrame>
                          </frames>
                     </DOMLayer>
-                    <DOMLayer name="Scene Bounds" color="#FF00FF" locked="true" outline="true" useOutlineView="true" autoNamed="false">
+                    <DOMLayer name="Scene Bounds" color="#FF00FF" locked="true" outline="true" useOutlineView="true" autoNamed="false" visible="false">
                          <frames>
                               <DOMFrame index="0" duration="10" keyMode="9728">
                                    <elements>
@@ -58,16 +62,7 @@
                     <DOMLayer name="Module Content" color="#9933CC" current="true" isSelected="true" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
-                                   <elements>
-                                        <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlList__Type1" selected="true">
-                                             <matrix>
-                                                  <Matrix tx="530.95" ty="434.95"/>
-                                             </matrix>
-                                             <transformationPoint>
-                                                  <Point x="239.95" y="33.95"/>
-                                             </transformationPoint>
-                                        </DOMSymbolInstance>
-                                   </elements>
+                                   <elements/>
                               </DOMFrame>
                               <DOMFrame index="1" keyMode="9728">
                                    <elements>
@@ -80,7 +75,7 @@
                               </DOMFrame>
                               <DOMFrame index="2" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="Scenes/TC_TScene__Scene1">
+                                        <DOMSymbolInstance libraryItemName="Scenes/TC_TScene__Scene1" selected="true">
                                              <transformationPoint>
                                                   <Point x="960" y="600"/>
                                              </transformationPoint>

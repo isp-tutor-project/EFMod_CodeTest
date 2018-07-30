@@ -22,7 +22,7 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMDynamicText>
-                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Type1" name="SInput" selected="true">
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Input1" name="SInput" selected="true">
                   <matrix>
                     <Matrix tx="375.75" ty="371.1"/>
                   </matrix>

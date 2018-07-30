@@ -1,8 +1,34 @@
 {
 	"_LIBRARY": {
-		"htmltext": {
+		"eflistbox": {
+			"SListBox1": {
+				"src": "$$EFX.html_list_std",
+				"iconscale": 3.5,
+				"style": {
+					"[slistbox1] .listbox": {
+						"border-radius": "10px"
+					}
+				},
+				"listoptions": [],
+				"templates": {
+					"var1": {
+						"values": {
+							"valname1": "value1",
+							"valname2": "value2",
+							"valname3": "value3"
+						},
+						"volume": 0.8,
+						"notes": ""
+					}
+				},
+				"html": "\n    <select datasource=\"myvar\">\n        <option value=\"\" hidden=\"\">Example Placeholder</option>\n        <option value=\"isGerman\">Audi</option>\n        <option value=\"isGerman\">BMW</option>\n        <option value=\"isGerman\">Mercedes</option>\n        <option value=\"isGerman\">Mini</option>\n        <option value=\"isJapanese\">Nissan</option>\n        <option value=\"isJapanese\">Toyota</option>\n        <option value=\"isSwedish\">Volvo</option>\n    </select>\n",
+				"datasource": "myvar",
+				"placeholder": "Example Placeholder"
+			}
+		},
+		"eftext": {
 			"STextBox1": {
-				"src": "$$EFX.STextBox1",
+				"src": "$$EFX.html_text",
 				"html": "\n            <p>This div element has position: absolute;\n                </p><ol class=\"spanclass\">\n                    <li><span style=\"color:blue; font-weight: bold;\">This is a test</span> this is the problem</li>\n                    <li>Pitta salad</li>\n                    <li>Green salad</li>\n                    <li>Halloumi</li>\n                </ol>\n            We make the text super long so we can see how the layout works<br><br>Then we see if line breaks make a difference<p></p>      \n        ",
 				"xname": "STextBox1",
 				"templates": {
@@ -46,9 +72,9 @@
 				}
 			}
 		},
-		"textinput": {
+		"efinput": {
 			"SInput1": {
-				"src": "$$EFX.SInput1",
+				"src": "$$EFX.html_input_std",
 				"xname": "SInput1",
 				"style": {
 					"[sinput1].outerContainer": {
@@ -57,10 +83,18 @@
 						"font-Size": "10px",
 						"font-Family": "verdana",
 						"height": "20px",
-						"width": "103px",
+						"width": "203px",
 						"top": "0px",
 						"left": "0px",
 						"border": "1px solid #CCC"
+					},
+					"[sinput1] .input::placeholder": {
+						"font-style": "italic",
+						"color": "rgb(233, 232, 232)"
+					},
+					"[sinput1] textarea:focus": {
+						"border": "2px solid #0CC",
+						"outline": "none"
 					}
 				},
 				"html": "\n\n        <textarea class=\"input\" placeholder=\"temp text\"></textarea>\n\n    "

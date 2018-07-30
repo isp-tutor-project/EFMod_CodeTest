@@ -4,16 +4,17 @@
     <style id="internalStyle">
 
             [efinput].outerContainer {
+
                 position:absolute;
                 box-sizing:border-box;            
     
-                resize:none;
-                border:1px solid #CCC;
+                resize: none;
+                border: none;
               
                 left:0px; 
                 top:0px;
-                width:303px;
-                height:20px;
+                width:0px;
+                height:0px;
 
                 pointer-events:all;
         
@@ -46,16 +47,6 @@
                 font-Style:normal;
                 font-Weight:normal;                  
             }
-
-            [efinput] .input::placeholder {
-                color:rgb(233, 232, 232);
-                font-style:italic;            
-            }
-
-            [efinput] textarea:focus {
-                outline: none;
-                border: 2px solid #0CC;
-            }​
     </style>
 
     <style id="customStyle">
@@ -66,7 +57,7 @@
               
                 left:0px; 
                 top:0px;
-                width:103px;
+                width:203px;
                 height:20px;
 
                 font-Family:verdana;  
@@ -75,9 +66,20 @@
                 font-Weight:normal;  
             }
 
+            [efcontrolname] .input::placeholder {
+                color:rgb(233, 232, 232);
+                font-style:italic;            
+            }
+
+            [efcontrolname] textarea:focus {
+                outline: none;
+                border: 2px solid #0CC;
+            }​
+
+
     </style>
 
-    <div class="outerContainer" id="controlContainer" efinput efcontrolname>
+    <div efinput efcontrolname class="outerContainer" id="controlContainer">
 
         <textarea class="input" placeholder="temp text"></textarea>
 

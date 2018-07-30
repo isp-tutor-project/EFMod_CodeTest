@@ -1,15 +1,15 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CustomControls/TC_THtmlInput__Type1" itemID="5b5cd7dc-000002dc" lastModified="1532814103" lastUniqueIdentifier="2">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CustomControls/TC_THtmlInput__Input1" itemID="5b5f91ac-00000345" lastModified="1532989868" lastUniqueIdentifier="2">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
   <timeline>
-    <DOMTimeline name="TC_THtmlInput__Type1">
+    <DOMTimeline name="TC_THtmlInput__Input1">
       <layers>
         <DOMLayer name="focusBox" color="#FFFF4F" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Assets/textFocusBox" name="SfocusBox" selected="true" centerPoint3DX="381.45" centerPoint3DY="36.95">
+                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlInput__Assets/textFocusBox" name="SfocusBox" centerPoint3DX="381.45" centerPoint3DY="36.95">
                   <matrix>
                     <Matrix tx="14" ty="14"/>
                   </matrix>

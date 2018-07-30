@@ -2,10 +2,13 @@
 	"TUTORDATA": "v1.0.0",
 	"SScene1": {
 		"SInput1": {
-			"$$REF": "$$EFL.textinput.SInput1"
+			"$$REF": "$$EFL.efinput.SInput1"
+		},
+		"SListBox1": {
+			"$$REF": "$$EFL.eflistbox.SListBox1"
 		},
 		"STextBox1": {
-			"$$REF": "$$EFL.htmltext.STextBox1"
+			"$$REF": "$$EFL.eftext.STextBox1"
 		},
 		"SShape1": {
 			"xname": "SShape1"
@@ -16,10 +19,10 @@
 	},
 	"SScene2": {
 		"SInput1": {
-			"$$REF": "$$EFL.textinput.SInput1"
+			"$$REF": "$$EFL.efinput.SInput1"
 		},
 		"STextBox1": {
-			"$$REF": "$$EFL.htmltext.STextBox1"
+			"$$REF": "$$EFL.eftext.STextBox1"
 		},
 		"SShape1": {
 			"xname": "SShape1"
