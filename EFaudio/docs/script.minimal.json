@@ -140,7 +140,7 @@
             },
 			"track2": {
 				"en": {
-					"html": "$$EFL.htmltext.templateVal1",
+					"html": "$$EFL.eftext.templateVal1",
 					"templates": {},
 					"text": "There are{{var1}}speech parameters which can be manipulated when using SSML.",
 					"cueSet": "a................b.....................................................z",

@@ -1,14 +1,14 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="CustomControls/TC_THtmlText__Text1" itemID="5b5f91c5-00000348" lastModified="1532989893">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HTMLControls/TC_THtmlTable__Table1" itemID="5b5f91bf-00000347" lastModified="1533050753">
   <timeline>
-    <DOMTimeline name="TC_THtmlText__Text1">
+    <DOMTimeline name="TC_THtmlTable__Table1">
       <layers>
         <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="CustomControls/TC_THtmlText__Assets/TextArea" name="STextContainer" selected="true">
+                <DOMSymbolInstance libraryItemName="HTMLControls/TC_THtmlTable__Assets/tablearea" name="SControlContainer" selected="true">
                   <transformationPoint>
-                    <Point x="50" y="50"/>
+                    <Point x="200" y="200"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
               </elements>

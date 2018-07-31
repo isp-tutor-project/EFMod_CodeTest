@@ -41,7 +41,7 @@
 								"id": "1a",
 								"SSML": "multiple",
 								"cues": [],
-								"duration": 650.9583333333334,
+								"duration": 673.75,
 								"trim": 0,
 								"volume": 0.8
 							},
@@ -49,7 +49,7 @@
 								"id": "1b",
 								"SSML": "several",
 								"cues": [],
-								"duration": 629.7916666666666,
+								"duration": 593.2083333333334,
 								"trim": 0,
 								"volume": 0.8
 							},
@@ -57,7 +57,7 @@
 								"id": "1c",
 								"SSML": "some",
 								"cues": [],
-								"duration": 554.9583333333334,
+								"duration": 467.7916666666667,
 								"trim": 0,
 								"volume": 0.8
 							}
@@ -91,7 +91,7 @@
 			},
 			"track2": {
 				"en": {
-					"html": "$$EFL.htmltext.STextBox1",
+					"html": "$$EFL.eftext.STextBox1",
 					"templates": {
 						"var1": {
 							"values": {

@@ -1,6 +1,6 @@
 {
 	"_LIBRARY": {
-		"eflistbox": {
+		"eflist": {
 			"SListBox1": {
 				"src": "$$EFX.html_list_std",
 				"iconscale": 3.5,

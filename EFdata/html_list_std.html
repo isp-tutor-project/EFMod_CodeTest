@@ -3,7 +3,7 @@
 <style id="internalStyle">
     /*the container must be positioned relative:*/
 
-    [eflistbox].outerContainer {
+    [eflist].outerContainer {
         position: absolute;
         visibility: hidden;
 
@@ -18,12 +18,12 @@
 
     /*hide original SELECT element:*/
 
-    [eflistbox].outerContainer select {
+    [eflist].outerContainer select {
         display: none;
     }
 
 
-    [eflistbox] .listbox {
+    [eflist] .listbox {
         display: table-cell;
         height: 40px;
         width: inherit;
@@ -33,8 +33,8 @@
 
     /*style the options, including the selected item:*/
 
-    [eflistbox] .listoptions div,
-    [eflistbox] .listbox {
+    [eflist] .listoptions div,
+    [eflist] .listbox {
         color: #ffffff;
         padding: 8px 16px;
         border: 1px solid transparent;
@@ -45,7 +45,7 @@
 
     /*style items options:*/
 
-    [eflistbox] .listoptions {
+    [eflist] .listoptions {
         position: absolute;
         top: 100%;
         left: 0;
@@ -53,18 +53,18 @@
         z-index: 99;
     }
 
-    [eflistbox] .color {
+    [eflist] .color {
         background-color: DodgerBlue;
     }
 
     /*hide the items when the select box is closed:*/
 
-    [eflistbox] .hideoptions {
+    [eflist] .hideoptions {
         display: none;
     }
 
-    [eflistbox] .listoptions div:hover,
-    [eflistbox] .isselected {
+    [eflist] .listoptions div:hover,
+    [eflist] .isselected {
         background-color: rgba(0, 0, 0, 0.1);
     }
 </style>
@@ -76,7 +76,7 @@
 </style>
 
 
-<div eflistbox efcontrolname class="outerContainer" id="controlContainer">
+<div eflist efcontrolname class="outerContainer" id="controlContainer">
     <select datasource="myvar">
         <option value="" hidden>Example Placeholder</option>
         <option value="isGerman">Audi</option>

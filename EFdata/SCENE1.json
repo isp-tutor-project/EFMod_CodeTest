@@ -5,7 +5,7 @@
             "$$REF":"$$EFL.efinput.SInput1"
         },
         "SListBox1": {
-            "$$REF":"$$EFL.eflistbox.SListBox1"
+            "$$REF":"$$EFL.eflist.SListBox1"
         },
         "STextBox1": {
             "$$REF":"$$EFL.eftext.STextBox1"           
