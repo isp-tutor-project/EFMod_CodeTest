@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HTMLControls/TC_THtmlTable__Table1" itemID="5b5f91bf-00000347" lastModified="1533050753">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_HTMLControls/TC_THtmlTable__Table1" itemID="5b5f91bf-00000347" lastModified="1533228522">
   <timeline>
     <DOMTimeline name="TC_THtmlTable__Table1">
       <layers>
@@ -6,9 +6,9 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_THtmlTable__Assets/tablearea" name="SControlContainer" selected="true">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_THtmlTable__Assets/tablearea" name="SControlContainer" selected="true">
                   <transformationPoint>
-                    <Point x="200" y="200"/>
+                    <Point/>
                   </transformationPoint>
                 </DOMSymbolInstance>
               </elements>

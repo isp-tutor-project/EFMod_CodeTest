@@ -76,6 +76,7 @@
 			"SInput1": {
 				"src": "$$EFX.html_input_std",
 				"xname": "SInput1",
+				"fontSize": "6",
 				"style": {
 					"[sinput1].outerContainer": {
 						"font-Weight": "normal",

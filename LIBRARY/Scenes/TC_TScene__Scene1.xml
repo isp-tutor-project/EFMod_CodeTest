@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene1" itemID="5b411266-0000033c" lastModified="1533061862">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene1" itemID="5b411266-0000033c" lastModified="1533228454">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
@@ -9,7 +9,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_TObject__BlueOval" name="SShape1">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_TObject__BlueOval" name="SShape1">
                   <matrix>
                     <Matrix a="0.425765991210938" d="0.425765991210938" tx="1390.8" ty="193.7"/>
                   </matrix>
@@ -25,7 +25,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_TObject__BlueOval" name="SShape2">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_TObject__BlueOval" name="SShape2">
                   <matrix>
                     <Matrix a="0" b="-0.309051513671875" c="0.309051513671875" d="0" tx="454.8" ty="377"/>
                   </matrix>
@@ -41,12 +41,20 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_THtmlText__Text1" name="STextBox1" selected="true">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_THtmlText__Text1" name="STextBox1">
                   <matrix>
                     <Matrix a="1.63999938964844" d="2.63900756835938" tx="710.95" ty="206.1"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="49.95" y="50.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_THtmlInput__Input1" name="SInput1">
+                  <matrix>
+                    <Matrix a="4.83000183105469" d="0.460006713867188" tx="689.95" ty="728"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.25"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
               </elements>

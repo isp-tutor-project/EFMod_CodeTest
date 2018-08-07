@@ -1,7 +1,7 @@
 <DOMComponentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_Tutor Global Assets_/TutorModule" itemID="5ad39eb8-000002c4" lastModified="1523818168" displayAsComponent="false" customIconID="0" persistLivePreview11="true" symbolDescription="__HTML5_Component__" editFrameIndex="1" requiredMinimumPlayerVersion="0" requiredMinimumASVersion="0" parametersAreLocked="true">
   <persistentData>
-    <PD n="className" v="ef.TutorModule"/>
     <PD n="htmlURL"/>
+    <PD n="className" v="ef.TutorModule"/>
     <PD n="source" v="EFComponents/src/ef_module.js"/>
     <PD n="dependencies" v="EFComponents/src/ef_loadManager.js,"/>
   </persistentData>

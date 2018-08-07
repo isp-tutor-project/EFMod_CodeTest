@@ -1,15 +1,18 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HTMLControls/TC_THtmlList__Assets/listbox" itemID="5b5cea34-000003a3" lastModified="1533050789">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_HTMLControls/TC_THtmlText__Assets/TextArea" itemID="5b59ef22-00000313" lastModified="1533228529">
   <timeline>
-    <DOMTimeline name="listbox">
+    <DOMTimeline name="TextArea">
       <layers>
         <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMRectangleObject objectWidth="100" objectHeight="100" x="530.95" y="434.95" selected="true" lockFlag="true">
+                <DOMRectangleObject objectWidth="100" objectHeight="100" x="690.95" y="276.95" lockFlag="true">
                   <matrix>
-                    <Matrix tx="-530.95" ty="-434.95"/>
+                    <Matrix tx="-690.95" ty="-276.95"/>
                   </matrix>
+                  <transformationPoint>
+                    <Point x="690.95" y="276.95"/>
+                  </transformationPoint>
                   <fill>
                     <SolidColor color="#CCCCCC"/>
                   </fill>

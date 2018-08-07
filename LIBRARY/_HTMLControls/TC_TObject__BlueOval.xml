@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_HTMLControls/TC_TObject__BlueOval" itemID="5b50c6ff-0000031f" lastModified="1532020479">
+  <timeline>
+    <DOMTimeline name="TC_TObject__BlueOval">
+      <layers>
+        <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="200.2" objectHeight="428.35" x="316.95" y="163.65" selected="true" endAngle="0">
+                  <matrix>
+                    <Matrix tx="-316.95" ty="-163.6"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#3366CC"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#CCCCCC"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

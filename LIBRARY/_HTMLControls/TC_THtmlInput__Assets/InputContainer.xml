@@ -1,20 +1,23 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HTMLControls/TC_THtmlTable__Assets/tablearea" itemID="5b5f40c1-000002dc" lastModified="1533050778">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_HTMLControls/TC_THtmlInput__Assets/InputContainer" itemID="5b633487-0000051f" lastModified="1533228563">
   <timeline>
-    <DOMTimeline name="tablearea">
+    <DOMTimeline name="InputContainer">
       <layers>
         <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMRectangleObject objectWidth="100" objectHeight="100" x="636.2" y="244.05" selected="true" lockFlag="true">
+                <DOMRectangleObject objectWidth="100" objectHeight="100" x="0" y="-1" lockFlag="true">
                   <matrix>
-                    <Matrix tx="-636.2" ty="-244.05"/>
+                    <Matrix ty="1"/>
                   </matrix>
+                  <transformationPoint>
+                    <Point y="-1"/>
+                  </transformationPoint>
                   <fill>
                     <SolidColor color="#CCCCCC"/>
                   </fill>
                   <stroke>
-                    <SolidStroke scaleMode="normal">
+                    <SolidStroke scaleMode="normal" sharpCorners="true">
                       <fill>
                         <SolidColor color="#CCCCCC"/>
                       </fill>

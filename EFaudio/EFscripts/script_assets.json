@@ -30,7 +30,7 @@
 										"relTime": 0
 									}
 								],
-								"duration": 613.9583333333334,
+								"duration": 509.125,
 								"trim": 70,
 								"volume": 1
 							}
@@ -57,7 +57,7 @@
 								"id": "1c",
 								"SSML": "some",
 								"cues": [],
-								"duration": 467.7916666666667,
+								"duration": 554.9583333333334,
 								"trim": 0,
 								"volume": 0.8
 							}
@@ -74,7 +74,7 @@
 										"relTime": 0
 									}
 								],
-								"duration": 3479.125,
+								"duration": 3323.3333333333335,
 								"trim": 0,
 								"volume": 1
 							}

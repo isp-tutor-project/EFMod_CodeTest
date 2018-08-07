@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene2" itemID="5b42585f-00000352" lastModified="1532734174">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Scenes/TC_TScene__Scene2" itemID="5b42585f-00000352" lastModified="1533228211">
   <persistentData>
     <PD n="CreateJSToolkit_timelinedata" v="version&#xA;0.1&#xA;loop&#xA;true"/>
   </persistentData>
@@ -9,7 +9,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_THtmlText__Text1" name="STextBox1" selected="true">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_THtmlText__Text1" name="STextBox1" selected="true">
                   <matrix>
                     <Matrix a="2.109619140625" b="-1.21794128417969" c="0.9134521484375" d="1.58221435546875" tx="106.9" ty="631.5"/>
                   </matrix>
@@ -25,20 +25,12 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_TObject__BlueOval" name="SShape1">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_TObject__BlueOval" name="SShape1">
                   <matrix>
                     <Matrix a="0.915573120117188" d="0.915573120117188" tx="375.85" ty="157.75"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="100.2" y="214.3"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_THtmlInput__Input1" name="SInput1">
-                  <matrix>
-                    <Matrix a="1.43562316894531" b="0.887603759765625" c="-0.887603759765625" d="1.43562316894531" tx="731.7" ty="-98.85"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="382.95" y="36.95"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
               </elements>
@@ -49,7 +41,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="HTMLControls/TC_TObject__BlueOval" name="SShape2">
+                <DOMSymbolInstance libraryItemName="_HTMLControls/TC_TObject__BlueOval" name="SShape2">
                   <matrix>
                     <Matrix a="0" b="-0.309051513671875" c="1.18650817871094" d="0" tx="491.8" ty="914.95"/>
                   </matrix>

@@ -1,17 +1,20 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="HTMLControls/TC_TObject__BlueOval" itemID="5b50c6ff-0000031f" lastModified="1532020479">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="_HTMLControls/TC_THtmlTable__Assets/tablearea" itemID="5b5f40c1-000002dc" lastModified="1533228544">
   <timeline>
-    <DOMTimeline name="TC_TObject__BlueOval">
+    <DOMTimeline name="tablearea">
       <layers>
         <DOMLayer name="Layer_1" color="#00FFFF" current="true" isSelected="true">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMOvalObject objectWidth="200.2" objectHeight="428.35" x="316.95" y="163.65" selected="true" endAngle="0">
+                <DOMRectangleObject objectWidth="100" objectHeight="100" x="636.2" y="244.05" lockFlag="true">
                   <matrix>
-                    <Matrix tx="-316.95" ty="-163.6"/>
+                    <Matrix tx="-636.2" ty="-244.05"/>
                   </matrix>
+                  <transformationPoint>
+                    <Point x="636.2" y="244.05"/>
+                  </transformationPoint>
                   <fill>
-                    <SolidColor color="#3366CC"/>
+                    <SolidColor color="#CCCCCC"/>
                   </fill>
                   <stroke>
                     <SolidStroke scaleMode="normal">
@@ -20,7 +23,7 @@
                       </fill>
                     </SolidStroke>
                   </stroke>
-                </DOMOvalObject>
+                </DOMRectangleObject>
               </elements>
             </DOMFrame>
           </frames>
